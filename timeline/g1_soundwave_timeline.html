@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>G1 Soundwave Mold Evolution</title>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
-  
   <style>
     body {
       margin: 0;
@@ -55,7 +54,6 @@
     .callout:hover {
       box-shadow: 0 6px 15px rgba(168, 85, 247, 0.3);
       background: rgba(107, 33, 168, 0.8);
-      transform: translateY(-2px);
     }
 
     .callout.microchange {
@@ -97,7 +95,7 @@
       text-align: center;
       color: #c084fc;
       font-size: 32px;
-      margin-bottom: 30px;
+      margin: 0 0 30px 0;
       text-transform: uppercase;
       letter-spacing: 2px;
       text-shadow: 0 0 10px rgba(192, 132, 252, 0.5);
@@ -106,7 +104,7 @@
     .header-row {
       display: flex;
       margin-left: 176px; /* Offset for track titles */
-      margin-bottom: 20px;
+      margin-bottom: 16px;
       border-bottom: 2px solid #6b21a8;
       padding-bottom: 10px;
     }
@@ -117,7 +115,7 @@
       flex-direction: column;
       border-left: 1px dashed #6b21a8;
     }
-    
+
     .year-block:first-child {
       border-left: none;
     }
@@ -147,8 +145,12 @@
       display: flex;
       gap: 12px;
       align-items: stretch;
-      min-height: 120px;
-      margin-bottom: 20px;
+      min-height: 48px;
+      margin-bottom: 16px;
+    }
+
+    .track:last-child {
+      margin-bottom: 0;
     }
 
     .track-title {
@@ -163,50 +165,76 @@
       border-right: 2px solid #6b21a8;
     }
 
-    .box {
-      background: rgba(88, 28, 135, 0.6);
-      border: 1px solid #a855f7;
-      border-radius: 8px;
-      padding: 12px;
+    .track-title.microchange {
+      color: #6b9aff;
+    }
+
+    .lane {
+      flex: 1;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      transition: transform 0.2s, box-shadow 0.2s;
+      align-items: center;
+      min-width: 0;
     }
 
-    .box:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 15px rgba(168, 85, 247, 0.3);
-      background: rgba(107, 33, 168, 0.8);
+    .empty-space {
+      /* Used for empty grid segments */
     }
 
-    .box-title {
-      font-weight: 700;
-      font-size: 14px;
-      color: #e9d5ff;
-      margin: 0 0 6px 0;
+    .span {
+      position: relative;
+      height: 10px;
+      background: rgba(168, 85, 247, 0.28);
+      border: 1px solid #a855f7;
+      border-radius: 999px;
+      align-self: center;
     }
 
-    .box-desc {
-      font-size: 12px;
-      color: #c084fc;
-      margin: 0;
-      line-height: 1.4;
+    .span.microchange {
+      background: rgba(107, 154, 255, 0.28);
+      border-color: #6b9aff;
+    }
+
+    .anchor {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      width: 0;
+      height: 0;
+      pointer-events: none;
     }
   </style>
 </head>
 <body>
 
   <div class="stage">
-    <svg class="connectors"></svg>
+    <svg class="connectors" aria-hidden="true"></svg>
 
-    <!-- Floating Callouts linked to anchors below -->
-    <div class="callout" data-for="vsy" data-side="top">
+    <div class="callout microchange" data-for="peach" data-side="top">
+      <p class="callout-title" contenteditable="true">Peach Prototype</p>
+      <p class="callout-desc" contenteditable="true">Hardcopy cast in early 1983. Lacking interior deck details.</p>
+    </div>
+
+    <div class="callout microchange" data-for="mc10" data-side="top" style="width: 200px;">
+      <p class="callout-title" contenteditable="true">MC-10 Cassetteman</p>
+      <p class="callout-desc" contenteditable="true">Debuts Sept 1983. First release lacks cassette deck details.</p>
+    </div>
+
+    <div class="callout" data-for="prerub" data-side="bottom">
+      <p class="callout-title" contenteditable="true">Hasbro G1 (Pre-Rub)</p>
+      <p class="callout-desc" contenteditable="true">Dual guns. Smooth tape door variations.</p>
+    </div>
+
+    <div class="callout" data-for="postrub" data-side="bottom">
+      <p class="callout-title" contenteditable="true">Post-Rub Standard</p>
+      <p class="callout-desc" contenteditable="true">Thermal rubsign added. Expanded global distribution.</p>
+    </div>
+
+    <div class="callout" data-for="vsy" data-side="bottom">
       <p class="callout-title" contenteditable="true">VSY Giftset</p>
       <p class="callout-desc" contenteditable="true">Oct 1985 release in Japan. Soundwave packed with Grimlock & Frenzy.</p>
     </div>
 
-    <div class="callout" data-for="soundblaster" data-side="top">
+    <div class="callout" data-for="soundblaster" data-side="bottom">
       <p class="callout-title" contenteditable="true">Soundblaster (Headmasters)</p>
       <p class="callout-desc" contenteditable="true">Retooled chest to hold two cassettes. Black color scheme.</p>
     </div>
@@ -253,66 +281,57 @@
       </div>
 
       <div class="track">
-        <div class="track-title">Track 1:<br>Takara Microchange</div>
-        
-        <!-- Early 1983 (Q1) - Prototypes -->
-        <div class="box" style="flex: 1;">
-          <p class="box-title" contenteditable="true">Peach Prototype</p>
-          <p class="box-desc" contenteditable="true">Hardcopy cast in early 1983. Lacking interior deck details.</p>
+        <div class="track-title microchange">Takara Microchange</div>
+        <div class="lane">
+          <!-- Early 1983 (Q1) - Prototypes -->
+          <div class="span microchange" style="flex: 1;">
+            <i class="anchor" id="peach"></i>
+          </div>
+          <!-- Mid 1983 Empty Space (Apr - Aug) -->
+          <div class="empty-space" style="flex: 1.7;"></div>
+          <!-- Late 1983 (Debuts Sept) -->
+          <div class="span microchange" style="flex: 1.3;">
+            <i class="anchor" id="mc10"></i>
+          </div>
+          <!-- Empty space for the rest of 1984 through 1987 -->
+          <div class="empty-space" style="flex: 16;"></div>
         </div>
-
-        <!-- Mid 1983 Empty Space (Apr - Aug) -->
-        <div class="empty-space" style="flex: 1.7;"></div>
-        
-        <!-- Late 1983 (Debuts Sept) -->
-        <div class="box" style="flex: 1.3;">
-          <p class="box-title" contenteditable="true">MC-10 Cassetteman</p>
-          <p class="box-desc" contenteditable="true">Debuts Sept 1983. First release lacks cassette deck details.</p>
-        </div>
-        
-        <!-- Empty space for the rest of 1984 through 1987 (16 quarters total remaining) -->
-        <div class="empty-space" style="flex: 16;"></div>
       </div>
 
       <div class="track">
         <div class="track-title">Track 2:<br>Hasbro/Takara Transformers</div>
-        
-        <!-- 1983 Empty (4 quarters) -->
-        <div class="empty-space" style="flex: 4;"></div>
-        
-        <!-- 1984 (First 2 quarters empty to show launch later in year) -->
-        <div class="empty-space" style="flex: 2;"></div>
-
-        <!-- 1984 Late / 1985 Early (Spans 3 quarters) -->
-        <div class="box" style="flex: 3;">
-          <p class="box-title" contenteditable="true">Hasbro G1 (Pre-Rub)</p>
-          <p class="box-desc" contenteditable="true">Dual guns. Smooth tape door variations.</p>
+        <div class="lane">
+          <!-- 1983 Empty (4 quarters) -->
+          <div class="empty-space" style="flex: 4;"></div>
+          <!-- 1984 (First 2 quarters empty to show launch later in year) -->
+          <div class="empty-space" style="flex: 2;"></div>
+          <!-- 1984 Late / 1985 Early (Spans 3 quarters) -->
+          <div class="span" style="flex: 3;">
+            <i class="anchor" id="prerub"></i>
+          </div>
+          <!-- 1985 Late / 1986 (Spans 6 quarters) -->
+          <div class="span" style="flex: 6;">
+            <i class="anchor" id="postrub"></i>
+          </div>
+          <!-- 1987 Empty (5 quarters) -->
+          <div class="empty-space" style="flex: 5;"></div>
         </div>
-
-        <!-- 1985 Late / 1986 (Spans 6 quarters) -->
-        <div class="box" style="flex: 6;">
-          <p class="box-title" contenteditable="true">Post-Rub Standard</p>
-          <p class="box-desc" contenteditable="true">Thermal rubsign added. Expanded global distribution.</p>
-        </div>
-
-        <!-- 1987 Empty (5 quarters) -->
-        <div class="empty-space" style="flex: 5;"></div>
       </div>
 
       <div class="track">
         <div class="track-title">Track 3:<br>Takara Japan Exclusives</div>
-        <div class="lane" style="display: flex; gap: 12px; width: 100%; align-items: center;">
+        <div class="lane">
           <!-- 1983 through July 1985 Empty (11 quarters) -->
           <div class="empty-space" style="flex: 11;"></div>
           <!-- Oct 1985 through end of 1985 (1 quarter) -->
-          <div class="span" style="flex: 1; border: 1px dashed #6b21a8; height: 100%; display: flex; align-items: center; justify-content: center; border-radius: 8px;">
-            <i class="anchor" id="vsy" style="width: 8px; height: 8px; background: #c084fc; border-radius: 50%; display: block;"></i>
+          <div class="span" style="flex: 1;">
+            <i class="anchor" id="vsy"></i>
           </div>
           <!-- 1986 Empty (4 quarters) -->
           <div class="empty-space" style="flex: 4;"></div>
           <!-- 1987 (Spans 4 quarters) -->
-          <div class="span" style="flex: 4; border: 1px dashed #6b21a8; height: 100%; display: flex; align-items: center; justify-content: center; border-radius: 8px;">
-            <i class="anchor" id="soundblaster" style="width: 8px; height: 8px; background: #c084fc; border-radius: 50%; display: block;"></i>
+          <div class="span" style="flex: 4;">
+            <i class="anchor" id="soundblaster"></i>
           </div>
         </div>
       </div>
@@ -331,7 +350,6 @@
     const container = document.querySelector('.timeline-container');
 
     function relRect(el) {
-      if(!el) return { left:0, top:0, right:0, bottom:0, width:0, height:0, cx:0, cy:0 };
       const s = stage.getBoundingClientRect();
       const r = el.getBoundingClientRect();
       return {
@@ -364,7 +382,6 @@
 
       callouts.forEach((box) => {
         const anchor = document.getElementById(box.dataset.for);
-        if(!anchor) return;
         const a = relRect(anchor);
         const w = box.offsetWidth;
         const h = box.offsetHeight;
@@ -394,8 +411,6 @@
 
     function layout() {
       const callouts = [...document.querySelectorAll('.callout')];
-      if(callouts.length === 0) return;
-
       callouts.forEach((box) => {
         box.style.left = '0px';
         box.style.top = '0px';
@@ -423,17 +438,13 @@
     function drawLines() {
       const w = stage.offsetWidth;
       const h = stage.offsetHeight;
-      if (svg) {
-        svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
-        svg.setAttribute('width', w);
-        svg.setAttribute('height', h);
-        svg.innerHTML = '';
-      }
+      svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
+      svg.setAttribute('width', w);
+      svg.setAttribute('height', h);
+      svg.innerHTML = '';
 
       document.querySelectorAll('.callout').forEach((box) => {
         const anchor = document.getElementById(box.dataset.for);
-        if(!anchor) return;
-
         const b = relRect(box);
         const a = relRect(anchor);
         const side = box.dataset.side;
@@ -461,13 +472,10 @@
       });
     }
 
-    // Attach event listeners to ensure layout is calculated properly
     window.addEventListener('resize', layout);
     document.addEventListener('input', layout);
     window.addEventListener('load', layout);
-    
-    // Slight delay on initial load to ensure fonts and layout engine have settled
-    setTimeout(layout, 100); 
+    layout();
   </script>
 
 </body>
