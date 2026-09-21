@@ -201,6 +201,7 @@
       border: 1px solid #a855f7;
       border-radius: 999px;
       align-self: center;
+      transition: background 0.2s, box-shadow 0.2s, border-color 0.2s;
     }
 
     .span.microchange {
@@ -211,6 +212,21 @@
     .span.japan {
       background: rgba(220, 85, 85, 0.28);
       border-color: #dc5555;
+    }
+
+    .span.is-active {
+      background: rgba(168, 85, 247, 0.55);
+      box-shadow: 0 0 12px rgba(168, 85, 247, 0.45);
+    }
+
+    .span.microchange.is-active {
+      background: rgba(107, 154, 255, 0.55);
+      box-shadow: 0 0 12px rgba(107, 154, 255, 0.45);
+    }
+
+    .span.japan.is-active {
+      background: rgba(220, 85, 85, 0.55);
+      box-shadow: 0 0 12px rgba(220, 85, 85, 0.45);
     }
 
     .anchor {
@@ -463,7 +479,8 @@
       svg.innerHTML = '';
 
       document.querySelectorAll('.callout').forEach((box) => {
-        const anchor = document.getElementById(box.dataset.for);
+        const id = box.dataset.for;
+        const anchor = document.getElementById(id);
         const b = relRect(box);
         const a = relRect(anchor);
         const side = box.dataset.side;
@@ -471,25 +488,70 @@
           ? { x: b.cx, y: b.bottom }
           : { x: b.cx, y: b.top };
         const end = { x: a.left, y: a.cy };
+        const lineColor = getComputedStyle(box).borderColor || LINE_COLOR;
+        const active = activeAnchor === id;
 
         const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
         path.setAttribute('d', elbowPath(start, end, side));
         path.setAttribute('fill', 'none');
-        const lineColor = getComputedStyle(box).borderColor || LINE_COLOR;
         path.setAttribute('stroke', lineColor);
-        path.setAttribute('stroke-width', '2');
+        path.setAttribute('stroke-width', active ? '3' : '2');
+        path.setAttribute('data-for', id);
+        path.classList.add('connector-line');
+        if (active) path.classList.add('is-active');
         svg.appendChild(path);
 
         const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
         circle.setAttribute('cx', end.x);
         circle.setAttribute('cy', end.y);
-        circle.setAttribute('r', CIRCLE_R);
-        circle.setAttribute('fill', '#1a0b2e');
+        circle.setAttribute('r', active ? CIRCLE_R + 3 : CIRCLE_R);
+        circle.setAttribute('fill', active ? lineColor : '#1a0b2e');
         circle.setAttribute('stroke', lineColor);
-        circle.setAttribute('stroke-width', '2');
+        circle.setAttribute('stroke-width', active ? '3' : '2');
+        circle.setAttribute('data-for', id);
+        circle.classList.add('connector-dot');
+        if (active) {
+          circle.classList.add('is-active');
+          circle.style.filter = `drop-shadow(0 0 8px ${lineColor})`;
+        }
         svg.appendChild(circle);
       });
     }
+
+    let activeAnchor = null;
+
+    function setActiveAnchor(id) {
+      activeAnchor = id;
+      document.querySelectorAll('.callout').forEach((box) => {
+        box.classList.toggle('is-active', box.dataset.for === id);
+      });
+      document.querySelectorAll('.span').forEach((span) => {
+        const anchor = span.querySelector('.anchor');
+        span.classList.toggle('is-active', !!(anchor && anchor.id === id));
+      });
+      drawLines();
+    }
+
+    function clearActiveAnchor(id) {
+      if (activeAnchor !== id) return;
+      const box = document.querySelector(`.callout[data-for="${id}"]`);
+      if (box && (box.matches(':hover') || box.matches(':focus-within'))) return;
+      activeAnchor = null;
+      document.querySelectorAll('.callout.is-active, .span.is-active').forEach((el) => {
+        el.classList.remove('is-active');
+      });
+      drawLines();
+    }
+
+    document.querySelectorAll('.callout').forEach((box) => {
+      const id = box.dataset.for;
+      box.addEventListener('mouseenter', () => setActiveAnchor(id));
+      box.addEventListener('mouseleave', () => clearActiveAnchor(id));
+      box.addEventListener('focusin', () => setActiveAnchor(id));
+      box.addEventListener('focusout', () => {
+        requestAnimationFrame(() => clearActiveAnchor(id));
+      });
+    });
 
     window.addEventListener('resize', layout);
     document.addEventListener('input', layout);
