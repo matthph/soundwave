@@ -66,6 +66,16 @@
       box-shadow: 0 6px 15px rgba(107, 154, 255, 0.35);
     }
 
+    .callout.japan {
+      background: rgba(140, 30, 30, 0.55);
+      border-color: #dc5555;
+    }
+
+    .callout.japan:hover {
+      background: rgba(170, 45, 45, 0.7);
+      box-shadow: 0 6px 15px rgba(220, 85, 85, 0.35);
+    }
+
     .callout-title {
       font-weight: 700;
       font-size: 14px;
@@ -169,6 +179,10 @@
       color: #6b9aff;
     }
 
+    .track-title.japan {
+      color: #dc5555;
+    }
+
     .lane {
       flex: 1;
       display: flex;
@@ -192,6 +206,11 @@
     .span.microchange {
       background: rgba(107, 154, 255, 0.28);
       border-color: #6b9aff;
+    }
+
+    .span.japan {
+      background: rgba(220, 85, 85, 0.28);
+      border-color: #dc5555;
     }
 
     .anchor {
@@ -229,12 +248,12 @@
       <p class="callout-desc" contenteditable="true">Thermal rubsign added. Expanded global distribution.</p>
     </div>
 
-    <div class="callout" data-for="vsy" data-side="bottom">
+    <div class="callout japan" data-for="vsy" data-side="bottom">
       <p class="callout-title" contenteditable="true">VSY Giftset</p>
       <p class="callout-desc" contenteditable="true">Oct 1985 release in Japan. Soundwave packed with Grimlock & Frenzy.</p>
     </div>
 
-    <div class="callout" data-for="soundblaster" data-side="bottom">
+    <div class="callout japan" data-for="soundblaster" data-side="bottom">
       <p class="callout-title" contenteditable="true">Soundblaster (Headmasters)</p>
       <p class="callout-desc" contenteditable="true">Retooled chest to hold two cassettes. Black color scheme.</p>
     </div>
@@ -281,7 +300,7 @@
       </div>
 
       <div class="track">
-        <div class="track-title microchange">Takara Microchange</div>
+        <div class="track-title microchange">Takara<br>Microchange</div>
         <div class="lane">
           <!-- Early 1983 (Q1) - Prototypes -->
           <div class="span microchange" style="flex: 1;">
@@ -299,7 +318,7 @@
       </div>
 
       <div class="track">
-        <div class="track-title">Track 2:<br>Hasbro/Takara Transformers</div>
+        <div class="track-title">Hasbro/Takara<br>Transformers</div>
         <div class="lane">
           <!-- 1983 Empty (4 quarters) -->
           <div class="empty-space" style="flex: 4;"></div>
@@ -319,18 +338,18 @@
       </div>
 
       <div class="track">
-        <div class="track-title">Track 3:<br>Takara Japan Exclusives</div>
+        <div class="track-title japan">Takara Japanese<br>Exclusives</div>
         <div class="lane">
           <!-- 1983 through July 1985 Empty (11 quarters) -->
           <div class="empty-space" style="flex: 11;"></div>
           <!-- Oct 1985 through end of 1985 (1 quarter) -->
-          <div class="span" style="flex: 1;">
+          <div class="span japan" style="flex: 1;">
             <i class="anchor" id="vsy"></i>
           </div>
-          <!-- 1986 Empty (4 quarters) -->
-          <div class="empty-space" style="flex: 4;"></div>
-          <!-- 1987 (Spans 4 quarters) -->
-          <div class="span" style="flex: 4;">
+          <!-- 1986 through Apr 1987 Empty (6 quarters) -->
+          <div class="empty-space" style="flex: 6;"></div>
+          <!-- July 1987 through end of 1987 (2 quarters) -->
+          <div class="span japan" style="flex: 2;">
             <i class="anchor" id="soundblaster"></i>
           </div>
         </div>
