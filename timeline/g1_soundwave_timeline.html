@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>G1 Soundwave Mold Evolution</title>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+  <title>G1 Soundwave Releases and Mold Evolution</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&amp;display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -21,8 +20,8 @@
 
     .stage {
       position: relative;
-      min-width: 1200px;
-      max-width: 1600px;
+      min-width: 1800px;
+      max-width: 2200px;
       margin: 0 auto;
       overflow: visible;
     }
@@ -88,6 +87,15 @@
       color: #c084fc;
       margin: 0;
       line-height: 1.4;
+    }
+
+    .callout-list {
+      padding-left: 1.15em;
+      list-style: disc;
+    }
+
+    .callout-list li {
+      margin: 0;
     }
 
     .timeline-container {
@@ -168,7 +176,7 @@
       flex-shrink: 0;
       font-size: 16px;
       font-weight: 700;
-      color: #c084fc;
+      color: #a855f7;
       display: flex;
       align-items: center;
       padding-right: 16px;
@@ -237,6 +245,43 @@
       height: 0;
       pointer-events: none;
     }
+
+    .save-ui {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .save-ui button {
+      appearance: none;
+      border: 1px solid #a855f7;
+      background: rgba(88, 28, 135, 0.85);
+      color: #e9d5ff;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font: inherit;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .save-ui button:hover {
+      background: rgba(107, 33, 168, 0.95);
+    }
+
+    .save-status {
+      font-size: 12px;
+      color: #c084fc;
+      min-width: 9rem;
+    }
+
+    .save-status.ok { color: #86efac; }
+    .save-status.err { color: #f87171; }
   </style>
 </head>
 <body>
@@ -254,9 +299,12 @@
       <p class="callout-desc" contenteditable="true">Debuts Sept 1983. First release lacks cassette deck details.</p>
     </div>
 
-    <div class="callout" data-for="prerub" data-side="bottom">
-      <p class="callout-title" contenteditable="true">Hasbro G1 (Pre-Rub)</p>
-      <p class="callout-desc" contenteditable="true">Dual guns. Smooth tape door variations.</p>
+    <div class="callout" data-for="prerub" data-side="bottom" data-align="left" data-line="diagonal" style="width: max-content;">
+      <p class="callout-title" contenteditable="true">TF 1.A</p>
+      <ul class="callout-desc callout-list">
+        <li contenteditable="true">Internal Takara stamp</li>
+        <li contenteditable="true">Solid fists</li>
+      </ul>
     </div>
 
     <div class="callout" data-for="postrub" data-side="bottom">
@@ -266,7 +314,7 @@
 
     <div class="callout japan" data-for="vsy" data-side="bottom">
       <p class="callout-title" contenteditable="true">VSY Giftset</p>
-      <p class="callout-desc" contenteditable="true">Oct 1985 release in Japan. Soundwave packed with Grimlock & Frenzy.</p>
+      <p class="callout-desc" contenteditable="true">Oct 1985 release in Japan. Soundwave packed with Grimlock &amp; Frenzy.</p>
     </div>
 
     <div class="callout japan" data-for="soundblaster" data-side="bottom">
@@ -275,7 +323,7 @@
     </div>
 
     <div class="timeline-container">
-      <h1 class="title">G1 Soundwave Mold Evolution</h1>
+      <h1 class="title">G1 Soundwave Releases and Mold Evolution</h1>
 
       <div class="header-row">
         <!-- 1983 -->
@@ -313,6 +361,27 @@
             <div class="quarter">Jan</div><div class="quarter">Apr</div><div class="quarter">July</div><div class="quarter">Oct</div>
           </div>
         </div>
+        <!-- 1988 -->
+        <div class="year-block">
+          <div class="year-label">1988</div>
+          <div class="quarters">
+            <div class="quarter">Jan</div><div class="quarter">Apr</div><div class="quarter">July</div><div class="quarter">Oct</div>
+          </div>
+        </div>
+        <!-- 1989 -->
+        <div class="year-block">
+          <div class="year-label">1989</div>
+          <div class="quarters">
+            <div class="quarter">Jan</div><div class="quarter">Apr</div><div class="quarter">July</div><div class="quarter">Oct</div>
+          </div>
+        </div>
+        <!-- 1990 -->
+        <div class="year-block">
+          <div class="year-label">1990</div>
+          <div class="quarters">
+            <div class="quarter">Jan</div><div class="quarter">Apr</div><div class="quarter">July</div><div class="quarter">Oct</div>
+          </div>
+        </div>
       </div>
 
       <div class="track">
@@ -328,8 +397,8 @@
           <div class="span microchange" style="flex: 1.3;">
             <i class="anchor" id="mc10"></i>
           </div>
-          <!-- Empty space for the rest of 1984 through 1987 -->
-          <div class="empty-space" style="flex: 16;"></div>
+          <!-- Empty space for the rest of 1984 through 1990 -->
+          <div class="empty-space" style="flex: 28;"></div>
         </div>
       </div>
 
@@ -338,18 +407,20 @@
         <div class="lane">
           <!-- 1983 Empty (4 quarters) -->
           <div class="empty-space" style="flex: 4;"></div>
-          <!-- 1984 (First 2 quarters empty to show launch later in year) -->
+          <!-- 1984 (First 2 quarters empty — Jan/Apr) -->
           <div class="empty-space" style="flex: 2;"></div>
-          <!-- 1984 Late / 1985 Early (Spans 3 quarters) -->
-          <div class="span" style="flex: 3;">
+          <!-- July 1984 only -->
+          <div class="span" style="flex: 1;">
             <i class="anchor" id="prerub"></i>
           </div>
+          <!-- Oct 1984 through early 1985 (2 quarters) — room for more events -->
+          <div class="empty-space" style="flex: 2;"></div>
           <!-- 1985 Late / 1986 (Spans 6 quarters) -->
           <div class="span" style="flex: 6;">
             <i class="anchor" id="postrub"></i>
           </div>
-          <!-- 1987 Empty (5 quarters) -->
-          <div class="empty-space" style="flex: 5;"></div>
+          <!-- 1987 through 1990 Empty (17 quarters) -->
+          <div class="empty-space" style="flex: 17;"></div>
         </div>
       </div>
 
@@ -368,9 +439,16 @@
           <div class="span japan" style="flex: 2;">
             <i class="anchor" id="soundblaster"></i>
           </div>
+          <!-- 1988 through 1990 Empty (12 quarters) -->
+          <div class="empty-space" style="flex: 12;"></div>
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="save-ui">
+    <span class="save-status" id="save-status">Ready</span>
+    <button type="button" id="save-btn">Save to HTML</button>
   </div>
 
   <script>
@@ -420,7 +498,10 @@
         const a = relRect(anchor);
         const w = box.offsetWidth;
         const h = box.offsetHeight;
-        let x = clamp(a.cx - w / 2, SIDE_PAD, stageW - w - SIDE_PAD);
+        const align = box.dataset.align || 'center';
+        let x = align === 'left'
+          ? clamp(a.cx - w - 12, SIDE_PAD, stageW - w - SIDE_PAD)
+          : clamp(a.cx - w / 2, SIDE_PAD, stageW - w - SIDE_PAD);
         let y = startY;
         let candidate = { left: x, top: y, right: x + w, bottom: y + h };
 
@@ -484,15 +565,28 @@
         const b = relRect(box);
         const a = relRect(anchor);
         const side = box.dataset.side;
-        const start = side === 'top'
-          ? { x: b.cx, y: b.bottom }
-          : { x: b.cx, y: b.top };
+        const align = box.dataset.align || 'center';
+        const lineStyle = box.dataset.line || 'elbow';
         const end = { x: a.left, y: a.cy };
+        let start;
+        let pathD;
+
+        if (lineStyle === 'diagonal') {
+          start = { x: b.cx, y: b.top };
+          pathD = `M ${start.x} ${start.y} L ${end.x} ${end.y}`;
+        } else {
+          const startX = align === 'left' ? b.right : b.cx;
+          start = side === 'top'
+            ? { x: startX, y: b.bottom }
+            : { x: startX, y: b.top };
+          pathD = elbowPath(start, end, side);
+        }
+
         const lineColor = getComputedStyle(box).borderColor || LINE_COLOR;
         const active = activeAnchor === id;
 
         const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-        path.setAttribute('d', elbowPath(start, end, side));
+        path.setAttribute('d', pathD);
         path.setAttribute('fill', 'none');
         path.setAttribute('stroke', lineColor);
         path.setAttribute('stroke-width', active ? '3' : '2');
@@ -557,7 +651,160 @@
     document.addEventListener('input', layout);
     window.addEventListener('load', layout);
     layout();
+
+    /* ---- Persist contenteditable text back to the HTML file ---- */
+    let fileHandle = null;
+    let saveTimer = null;
+    const saveStatus = document.getElementById('save-status');
+    const saveBtn = document.getElementById('save-btn');
+
+    function setSaveStatus(text, kind) {
+      saveStatus.textContent = text;
+      saveStatus.classList.remove('ok', 'err');
+      if (kind) saveStatus.classList.add(kind);
+    }
+
+    function normalizeEditable(el) {
+      return (el.innerText || el.textContent || '')
+        .replace(/\u00a0/g, ' ')
+        .replace(/\n+$/g, '')
+        .trimEnd();
+    }
+
+    function buildSavableHtml() {
+      const root = document.documentElement.cloneNode(true);
+
+      root.querySelectorAll('.callout').forEach((box) => {
+        box.classList.remove('is-active');
+        const width = box.style.width;
+        box.removeAttribute('style');
+        if (width) box.style.width = width;
+      });
+
+      root.querySelectorAll('.span').forEach((span) => {
+        span.classList.remove('is-active');
+      });
+
+      const stageClone = root.querySelector('.stage');
+      if (stageClone) stageClone.removeAttribute('style');
+
+      const svgClone = root.querySelector('.connectors');
+      if (svgClone) {
+        svgClone.innerHTML = '';
+        ['viewBox', 'width', 'height'].forEach((attr) => svgClone.removeAttribute(attr));
+      }
+
+      const statusClone = root.querySelector('#save-status');
+      if (statusClone) {
+        statusClone.textContent = 'Ready';
+        statusClone.classList.remove('ok', 'err');
+      }
+
+      // Pull live text from the page (clone may contain browser-inserted markup)
+      document.querySelectorAll('[contenteditable="true"]').forEach((live, index) => {
+        const clones = root.querySelectorAll('[contenteditable="true"]');
+        const target = clones[index];
+        if (!target) return;
+        target.textContent = normalizeEditable(live);
+      });
+
+      return '<!DOCTYPE html>\n' + root.outerHTML + '\n';
+    }
+
+    async function ensureFileHandle() {
+      if (fileHandle) {
+        const perm = await fileHandle.queryPermission({ mode: 'readwrite' });
+        if (perm === 'granted') return fileHandle;
+        const next = await fileHandle.requestPermission({ mode: 'readwrite' });
+        if (next === 'granted') return fileHandle;
+        fileHandle = null;
+      }
+
+      if (!window.showOpenFilePicker) {
+        throw new Error('File picker unavailable — download fallback will be used');
+      }
+
+      setSaveStatus('Choose g1_soundwave_timeline.html…');
+      const handles = await window.showOpenFilePicker({
+        multiple: false,
+        types: [{ description: 'HTML', accept: { 'text/html': ['.html'] } }]
+      });
+      fileHandle = handles[0];
+      const perm = await fileHandle.requestPermission({ mode: 'readwrite' });
+      if (perm !== 'granted') {
+        fileHandle = null;
+        throw new Error('Write permission denied');
+      }
+      return fileHandle;
+    }
+
+    function downloadHtml(html) {
+      const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'g1_soundwave_timeline.html';
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    async function saveToHtml({ interactive = true } = {}) {
+      const html = buildSavableHtml();
+      try {
+        if (!window.showOpenFilePicker) {
+          downloadHtml(html);
+          setSaveStatus('Downloaded — replace the file manually', 'ok');
+          return;
+        }
+        const handle = interactive || fileHandle
+          ? await ensureFileHandle()
+          : null;
+        if (!handle) {
+          setSaveStatus('Click Save to link the HTML file');
+          return;
+        }
+        const writable = await handle.createWritable();
+        await writable.write(html);
+        await writable.close();
+        setSaveStatus('Saved to HTML', 'ok');
+      } catch (err) {
+        if (err && err.name === 'AbortError') {
+          setSaveStatus('Save cancelled');
+          return;
+        }
+        console.warn(err);
+        if (interactive) {
+          downloadHtml(html);
+          setSaveStatus('Downloaded — replace the file manually', 'err');
+        } else {
+          setSaveStatus('Save failed', 'err');
+        }
+      }
+    }
+
+    function queueSave() {
+      clearTimeout(saveTimer);
+      saveTimer = setTimeout(() => saveToHtml({ interactive: false }), 500);
+    }
+
+    saveBtn.addEventListener('click', () => saveToHtml({ interactive: true }));
+
+    document.addEventListener('keydown', (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's') {
+        e.preventDefault();
+        saveToHtml({ interactive: true });
+      }
+    });
+
+    document.querySelectorAll('[contenteditable="true"]').forEach((el) => {
+      el.addEventListener('blur', () => queueSave());
+    });
+
+    setSaveStatus(fileHandle ? 'Linked' : 'Click Save once to link the file');
   </script>
 
-</body>
-</html>
+
+
+
+
+</body></html>
