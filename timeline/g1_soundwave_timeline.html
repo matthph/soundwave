@@ -90,6 +90,24 @@
       box-shadow: 0 6px 15px rgba(220, 85, 85, 0.35);
     }
 
+    .callout.soundblaster {
+      background: rgba(45, 45, 48, 0.75);
+      border-color: #d4af37;
+    }
+
+    .callout.soundblaster:hover {
+      background: rgba(58, 58, 62, 0.9);
+      box-shadow: 0 6px 15px rgba(212, 175, 55, 0.35);
+    }
+
+    .callout.soundblaster .callout-title {
+      color: #f0e6c8;
+    }
+
+    .callout.soundblaster .callout-desc {
+      color: #c4b896;
+    }
+
     .callout-title {
       font-weight: 700;
       font-size: 14px;
@@ -256,6 +274,11 @@
       border-color: #dc5555;
     }
 
+    .span.soundblaster {
+      background: rgba(55, 55, 58, 0.85);
+      border-color: #d4af37;
+    }
+
     .span.is-active {
       background: rgba(168, 85, 247, 0.55);
       box-shadow: 0 0 12px rgba(168, 85, 247, 0.45);
@@ -269,6 +292,11 @@
     .span.japan.is-active {
       background: rgba(220, 85, 85, 0.55);
       box-shadow: 0 0 12px rgba(220, 85, 85, 0.45);
+    }
+
+    .span.soundblaster.is-active {
+      background: rgba(70, 70, 74, 0.95);
+      box-shadow: 0 0 12px rgba(212, 175, 55, 0.45);
     }
 
     .anchor {
@@ -340,6 +368,7 @@
         <li contenteditable="true">Hasbro and Takara Internal Stamp for international TF sales</li>
         <li contenteditable="true">1.B Takara stamp on battery cover blocked</li>
         <li contenteditable="true">Solid fists</li>
+        <li contenteditable="true">Some have rubsigns</li>
       </ul>
     </div>
 
@@ -351,6 +380,7 @@
         <li contenteditable="true">Takara internal stamp</li>
         <li contenteditable="true">No Hasbro stamp</li>
         <li contenteditable="true">Mold holes filled</li>
+        <li contenteditable="true">Some have rubsigns</li>
       </ul>
     </div>
 
@@ -358,8 +388,10 @@
       <p class="callout-title" contenteditable="true">TF 2.E</p>
       <ul class="callout-desc callout-list">
         <li contenteditable="true">Internal Hasbro stamp re-added for Transformers international distribution</li>
-        <li contenteditable="true">The base mold for International Soundwave figures - Japan, French Ceji, Mexican IGA </li>
+        <li contenteditable="true">The base mold for International Soundwave figures - French Ceji, Mexican IGA </li>
         <li contenteditable="true">Slotted/hollow wrists</li>
+        <li contenteditable="true">The version include in the 1985 VSY giftset with Grimlock and Frenzy</li>
+        <li contenteditable="true">Most should have rubsigns</li>
       </ul>
     </div>
 
@@ -372,7 +404,7 @@
       </ul>
     </div>
 
-    <div class="callout japan" data-for="soundblaster" data-side="bottom" data-place-after="tf3f" style="width: max-content;">
+    <div class="callout soundblaster" data-for="soundblaster" data-side="bottom" data-place-after="tf3f" style="width: max-content;">
       <p class="callout-title" contenteditable="true">TF 3.G Soundblaster - Jul 1987</p>
       <ul class="callout-desc callout-list">
         <li contenteditable="true">Retooled chest to hold two cassettes</li>
@@ -489,11 +521,14 @@
         <div class="lane">
           <!-- 1983 through Apr 1985 Empty (10 quarters) -->
           <div class="empty-space" style="flex: 10;"></div>
-          <!-- July 1985 through end of 1987 (10 quarters) -->
-          <div class="span japan" style="flex: 10;">
+          <!-- Red D17: July 1985 – Apr 1987 (ends at July 1987) -->
+          <div class="span japan" style="flex: 8;">
             <i class="anchor" id="tf2e-japan" style="left: 0%;"></i>
-            <i class="anchor" id="tf3f" style="left: 50%;"></i>
-            <i class="anchor" id="soundblaster" style="left: 80%;"></i>
+            <i class="anchor" id="tf3f" style="left: 62%;"></i>
+          </div>
+          <!-- Soundblaster: July 1987 – end of 1987 -->
+          <div class="span soundblaster" style="flex: 2;">
+            <i class="anchor" id="soundblaster" style="left: 0%;"></i>
           </div>
           <!-- 1988 through 1990 Empty (12 quarters) -->
           <div class="empty-space" style="flex: 12;"></div>
