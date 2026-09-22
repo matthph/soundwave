@@ -2,7 +2,7 @@
 <html lang="en"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>G1 Soundwave Releases and Mold Evolution</title>
+  <title>G1 Soundwave Mold Evolution</title>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&amp;display=swap" rel="stylesheet">
   <style>
     body {
@@ -39,7 +39,9 @@
     .callout {
       position: absolute;
       z-index: 3;
-      width: 250px;
+      width: fit-content;
+      max-width: 280px;
+      min-width: 0;
       background: rgba(88, 28, 135, 0.6);
       border: 1px solid #a855f7;
       border-radius: 8px;
@@ -48,6 +50,8 @@
       flex-direction: column;
       justify-content: center;
       transition: transform 0.2s, box-shadow 0.2s;
+      overflow-wrap: anywhere;
+      word-wrap: break-word;
     }
 
     .callout:hover {
@@ -80,6 +84,7 @@
       font-size: 14px;
       color: #e9d5ff;
       margin: 0 0 6px 0;
+      overflow-wrap: anywhere;
     }
 
     .callout-desc {
@@ -87,6 +92,7 @@
       color: #c084fc;
       margin: 0;
       line-height: 1.4;
+      overflow-wrap: anywhere;
     }
 
     .callout-list {
@@ -96,6 +102,7 @@
 
     .callout-list li {
       margin: 0;
+      overflow-wrap: anywhere;
     }
 
     .timeline-container {
@@ -198,6 +205,22 @@
       min-width: 0;
     }
 
+    .lane.lane-stack {
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: center;
+      gap: 8px;
+      min-height: 36px;
+    }
+
+    .lane-row {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      min-width: 0;
+      min-height: 12px;
+    }
+
     .empty-space {
       /* Used for empty grid segments */
     }
@@ -289,41 +312,99 @@
   <div class="stage">
     <svg class="connectors" aria-hidden="true"></svg>
 
-    <div class="callout microchange" data-for="peach" data-side="top">
-      <p class="callout-title" contenteditable="true">Peach Prototype</p>
-      <p class="callout-desc" contenteditable="true">Hardcopy cast in early 1983. Lacking interior deck details.</p>
+    <div class="callout microchange" data-for="peach" data-side="top" style="width: max-content;">
+      <p class="callout-title" contenteditable="true">Peach Prototype - Early 1983?</p>
+      <ul class="callout-desc callout-list">
+        <li contenteditable="true">Hardcopy cast</li>
+        <li contenteditable="true">No interior deck details</li>
+        <li contenteditable="true">Interior Takara stamp</li>
+        <li contenteditable="true">No outer thigh ridge</li>
+      </ul>
     </div>
 
-    <div class="callout microchange" data-for="mc10" data-side="top" style="width: 200px;">
-      <p class="callout-title" contenteditable="true">MC-10 Cassetteman</p>
-      <p class="callout-desc" contenteditable="true">Debuts Sept 1983. First release lacks cassette deck details.</p>
+    <div class="callout microchange" data-for="mc1a" data-side="top" style="width: max-content;">
+      <p class="callout-title" contenteditable="true">MC 1.A - Sept 1983</p>
+      <ul class="callout-desc callout-list">
+        <li contenteditable="true">No interior deck detail</li>
+        <li contenteditable="true">Interior Takara stamp</li>
+        <li contenteditable="true">Thigh ridge added</li>
+      </ul>
     </div>
 
-    <div class="callout" data-for="prerub" data-side="bottom" data-align="left" data-line="diagonal" style="width: max-content;">
+    <div class="callout microchange" data-for="mc1b" data-side="top" style="width: max-content;">
+      <p class="callout-title" contenteditable="true">MC 1.B</p>
+      <ul class="callout-desc callout-list">
+        <li contenteditable="true">Interior deck detail added</li>
+        <li contenteditable="true">Interior Takara stamp</li>
+        <li contenteditable="true">Final pre-TF mold</li>
+      </ul>
+    </div>
+
+    <div class="callout" data-for="tf1a" data-side="bottom" data-align-with="peach" style="width: 150px; max-width: 150px;">
       <p class="callout-title" contenteditable="true">TF 1.A</p>
       <ul class="callout-desc callout-list">
-        <li contenteditable="true">Internal Takara stamp</li>
+        <li contenteditable="true">Internal Takara stamp from MC 1.B</li>
+        <li contenteditable="true">CassetteMan removed from tape door</li>
+        <li contenteditable="true">Clean battery cover</li>
         <li contenteditable="true">Solid fists</li>
       </ul>
     </div>
 
-    <div class="callout" data-for="postrub" data-side="bottom">
-      <p class="callout-title" contenteditable="true">Post-Rub Standard</p>
-      <p class="callout-desc" contenteditable="true">Thermal rubsign added. Expanded global distribution.</p>
+    <div class="callout" data-for="tf1b" data-side="bottom" data-place-after="tf1a" style="width: 150px; max-width: 150px;">
+      <p class="callout-title" contenteditable="true">TF 1.B</p>
+      <ul class="callout-desc callout-list">
+        <li contenteditable="true">Takara stamp on battery cover</li>
+        <li contenteditable="true">Mold scar in battery compartment</li>
+        <li contenteditable="true">Solid fists</li>
+      </ul>
     </div>
 
-    <div class="callout japan" data-for="vsy" data-side="bottom">
-      <p class="callout-title" contenteditable="true">VSY Giftset</p>
-      <p class="callout-desc" contenteditable="true">Oct 1985 release in Japan. Soundwave packed with Grimlock &amp; Frenzy.</p>
+    <div class="callout" data-for="tf1c" data-side="bottom" data-place-after="tf1b" style="width: 150px; max-width: 150px;">
+      <p class="callout-title" contenteditable="true">TF 1.C</p>
+      <ul class="callout-desc callout-list">
+        <li contenteditable="true">Hasbro and Takara Internal Stamp for international TF sales</li>
+        <li contenteditable="true">1.B Takara stamp on battery cover blocked</li>
+        <li contenteditable="true">Solid fists</li>
+      </ul>
     </div>
 
-    <div class="callout japan" data-for="soundblaster" data-side="bottom">
-      <p class="callout-title" contenteditable="true">Soundblaster (Headmasters)</p>
-      <p class="callout-desc" contenteditable="true">Retooled chest to hold two cassettes. Black color scheme.</p>
+    <div class="callout" data-for="tf2d" data-side="bottom" data-place-after="tf1c" style="width: 150px; max-width: 150px;">
+      <p class="callout-title" contenteditable="true">TF 2.D</p>
+      <ul class="callout-desc callout-list">
+        <li contenteditable="true">New mold worked concurrently with 1.B/1.C</li>
+        <li contenteditable="true">Slotted/hollow wrists</li>
+        <li contenteditable="true">Takara internal stamp</li>
+        <li contenteditable="true">No Hasbro stamp</li>
+        <li contenteditable="true">Mold holes filled</li>
+      </ul>
+    </div>
+
+    <div class="callout" data-for="tf2e" data-side="bottom" data-place-after="tf2d" style="width: max-content;">
+      <p class="callout-title" contenteditable="true">TF 2.E</p>
+      <ul class="callout-desc callout-list">
+        <li contenteditable="true">Internal Hasbro stamp re-added</li>
+        <li contenteditable="true"></li>
+      </ul>
+    </div>
+
+    <div class="callout japan" data-for="vsy" data-side="bottom" data-place-after="tf2e" style="width: 150px; max-width: 150px;">
+      <p class="callout-title" contenteditable="true">TF 3.F - Oct 1986</p>
+      <ul class="callout-desc callout-list">
+        <li contenteditable="true">Retooled with external hinge</li>
+        <li contenteditable="true">Dual-cassette door design</li>
+      </ul>
+    </div>
+
+    <div class="callout japan" data-for="soundblaster" data-side="bottom" data-place-after="vsy" style="width: max-content;">
+      <p class="callout-title" contenteditable="true">TF 3.G Soundblaster - Jul 1987</p>
+      <ul class="callout-desc callout-list">
+        <li contenteditable="true">Retooled chest to hold two cassettes</li>
+        <li contenteditable="true">Black color scheme</li>
+      </ul>
     </div>
 
     <div class="timeline-container">
-      <h1 class="title">G1 Soundwave Releases and Mold Evolution</h1>
+      <h1 class="title">G1 Soundwave Mold Evolution</h1>
 
       <div class="header-row">
         <!-- 1983 -->
@@ -385,59 +466,62 @@
       </div>
 
       <div class="track">
-        <div class="track-title microchange">Takara<br>Microchange</div>
+        <div class="track-title microchange">Takara<br>Microchange<br>MC-10</div>
         <div class="lane">
           <!-- Early 1983 (Q1) - Prototypes -->
-          <div class="span microchange" style="flex: 1;">
-            <i class="anchor" id="peach"></i>
+          <!-- Jan – Apr 1983; line biased toward Jan -->
+          <div class="span microchange" style="flex: 2;">
+            <i class="anchor" id="peach" style="left: 36%;"></i>
           </div>
-          <!-- Mid 1983 Empty Space (Apr - Aug) -->
-          <div class="empty-space" style="flex: 1.7;"></div>
-          <!-- Late 1983 (Debuts Sept) -->
-          <div class="span microchange" style="flex: 1.3;">
-            <i class="anchor" id="mc10"></i>
+          <!-- July 1983 empty -->
+          <div class="empty-space" style="flex: 1;"></div>
+          <!-- Oct 1983 through Apr 1985 (ends at start of July 1985) -->
+          <div class="span microchange" style="flex: 7;">
+            <i class="anchor" id="mc1a" style="left: 0%;"></i>
+            <i class="anchor" id="mc1b" style="left: 22%;"></i>
           </div>
-          <!-- Empty space for the rest of 1984 through 1990 -->
-          <div class="empty-space" style="flex: 28;"></div>
+          <!-- July 1985 through 1990 -->
+          <div class="empty-space" style="flex: 22;"></div>
         </div>
       </div>
 
       <div class="track">
-        <div class="track-title">Hasbro/Takara<br>Transformers</div>
-        <div class="lane">
-          <!-- 1983 Empty (4 quarters) -->
-          <div class="empty-space" style="flex: 4;"></div>
-          <!-- 1984 (First 2 quarters empty — Jan/Apr) -->
-          <div class="empty-space" style="flex: 2;"></div>
-          <!-- July 1984 only -->
-          <div class="span" style="flex: 1;">
-            <i class="anchor" id="prerub"></i>
+        <div class="track-title">Hasbro<br>Transformers<br>Soundwave</div>
+        <div class="lane lane-stack">
+          <!-- Upper bar: TF 1.A / 1.B / 1.C -->
+          <div class="lane-row">
+            <!-- 1983 through Apr 1984 Empty (6 quarters) -->
+            <div class="empty-space" style="flex: 6;"></div>
+            <!-- July 1984 – early 1985 -->
+            <div class="span" style="flex: 3;">
+              <i class="anchor" id="tf1a" style="left: 0%;"></i>
+              <i class="anchor" id="tf1b" style="left: 45%;"></i>
+              <i class="anchor" id="tf1c" style="left: 80%;"></i>
+            </div>
+            <div class="empty-space" style="flex: 23;"></div>
           </div>
-          <!-- Oct 1984 through early 1985 (2 quarters) — room for more events -->
-          <div class="empty-space" style="flex: 2;"></div>
-          <!-- 1985 Late / 1986 (Spans 6 quarters) -->
-          <div class="span" style="flex: 6;">
-            <i class="anchor" id="postrub"></i>
+          <!-- Lower bar: TF 2.D / 2.E — offset down, overlaps in time (concurrent mold) -->
+          <div class="lane-row">
+            <!-- Starts mid–late TF1 era (Oct 1984) -->
+            <div class="empty-space" style="flex: 7;"></div>
+            <div class="span" style="flex: 6;">
+              <i class="anchor" id="tf2d" style="left: 23%;"></i>
+              <i class="anchor" id="tf2e" style="left: 55%;"></i>
+            </div>
+            <div class="empty-space" style="flex: 19;"></div>
           </div>
-          <!-- 1987 through 1990 Empty (17 quarters) -->
-          <div class="empty-space" style="flex: 17;"></div>
         </div>
       </div>
 
       <div class="track">
-        <div class="track-title japan">Takara Japanese<br>Exclusives</div>
+        <div class="track-title japan">Takara<br>Transformers<br>D17</div>
         <div class="lane">
           <!-- 1983 through July 1985 Empty (11 quarters) -->
           <div class="empty-space" style="flex: 11;"></div>
-          <!-- Oct 1985 through end of 1985 (1 quarter) -->
-          <div class="span japan" style="flex: 1;">
-            <i class="anchor" id="vsy"></i>
-          </div>
-          <!-- 1986 through Apr 1987 Empty (6 quarters) -->
-          <div class="empty-space" style="flex: 6;"></div>
-          <!-- July 1987 through end of 1987 (2 quarters) -->
-          <div class="span japan" style="flex: 2;">
-            <i class="anchor" id="soundblaster"></i>
+          <!-- Oct 1985 through end of 1987 (9 quarters) — continuous Japan bar -->
+          <div class="span japan" style="flex: 9;">
+            <i class="anchor" id="vsy" style="left: 44%;"></i>
+            <i class="anchor" id="soundblaster" style="left: 78%;"></i>
           </div>
           <!-- 1988 through 1990 Empty (12 quarters) -->
           <div class="empty-space" style="flex: 12;"></div>
@@ -453,10 +537,11 @@
 
   <script>
     const LINE_COLOR = '#a855f7';
-    const BOX_GAP = 28;
-    const ROW_GAP = 16;
+    const BOX_GAP = 20;
+    const ROW_GAP = 12;
     const SIDE_PAD = 8;
     const CIRCLE_R = 6;
+    const TOP_GUTTER = 14;
 
     const stage = document.querySelector('.stage');
     const svg = document.querySelector('.connectors');
@@ -486,43 +571,231 @@
       return Math.min(max, Math.max(min, value));
     }
 
-    function placeGroup(callouts, side, containerRect) {
-      const placed = [];
+    function placeTopRow(callouts) {
       const stageW = stage.offsetWidth;
-      const startY = side === 'top'
-        ? 0
-        : containerRect.bottom + BOX_GAP;
+      const placed = [];
 
       callouts.forEach((box) => {
         const anchor = document.getElementById(box.dataset.for);
         const a = relRect(anchor);
         const w = box.offsetWidth;
         const h = box.offsetHeight;
+        let x = clamp(a.cx - w / 2, SIDE_PAD, stageW - w - SIDE_PAD);
+
+        // Keep a single row: always sit to the right of prior boxes when needed
+        if (placed.length) {
+          const prev = placed[placed.length - 1];
+          if (x < prev.right + BOX_GAP) {
+            x = prev.right + BOX_GAP;
+          }
+        }
+        x = Math.min(x, Math.max(SIDE_PAD, stageW - w - SIDE_PAD));
+
+        const candidate = { left: x, top: 0, right: x + w, bottom: h, h };
+        box.style.left = x + 'px';
+        box.style.top = '0px';
+        placed.push(candidate);
+      });
+
+      // If anything overflowed the stage, compress leftward as a pack
+      if (placed.length) {
+        const overflow = placed[placed.length - 1].right - (stageW - SIDE_PAD);
+        if (overflow > 0) {
+          let x = SIDE_PAD;
+          callouts.forEach((box, i) => {
+            const w = placed[i].right - placed[i].left;
+            const h = placed[i].h;
+            box.style.left = x + 'px';
+            placed[i] = { left: x, top: 0, right: x + w, bottom: h, h };
+            x += w + Math.max(8, BOX_GAP - 4);
+          });
+        }
+      }
+
+      const rowH = placed.reduce((m, p) => Math.max(m, p.h), 0);
+
+      // Slide Microchange callouts left ~one quarter; anchors/endpoints stay put
+      const quarterEl = document.querySelector('.quarter');
+      const gridShift = quarterEl ? quarterEl.getBoundingClientRect().width : 60;
+      const minLeft = Math.min(...placed.map((p) => p.left));
+      const shift = Math.min(gridShift, Math.max(0, minLeft - SIDE_PAD));
+      if (shift > 0) {
+        callouts.forEach((box, i) => {
+          const p = placed[i];
+          const x = p.left - shift;
+          box.style.left = x + 'px';
+          placed[i] = { left: x, top: 0, right: x + (p.right - p.left), bottom: p.h, h: p.h };
+        });
+      }
+
+      // Pin the row to the bottom of the top band (just above the timeline)
+      callouts.forEach((box, i) => {
+        const h = placed[i].h;
+        const y = rowH - h;
+        box.style.top = y + 'px';
+        placed[i].top = y;
+        placed[i].bottom = y + h;
+      });
+
+      return rowH;
+    }
+
+    function placeBottomGroup(callouts, containerRect) {
+      const placed = [];
+      const stageW = stage.offsetWidth;
+      const startY = containerRect.bottom + BOX_GAP;
+      const positions = new Map(); // id -> {left, top, width, height}
+
+      const primary = callouts.filter((b) => !b.dataset.placeBefore && !b.dataset.placeAfter);
+      const secondary = callouts.filter((b) => b.dataset.placeBefore || b.dataset.placeAfter);
+
+      primary.sort((a, b) =>
+        relRect(document.getElementById(a.dataset.for)).cx -
+        relRect(document.getElementById(b.dataset.for)).cx
+      );
+
+      function commit(box, x, y, w, h) {
+        box.style.left = x + 'px';
+        box.style.top = y + 'px';
+        const candidate = { left: x, top: y, right: x + w, bottom: y + h };
+        placed.push(candidate);
+        positions.set(box.dataset.for, { left: x, top: y, width: w, height: h });
+        return candidate;
+      }
+
+      primary.forEach((box) => {
+        const anchor = document.getElementById(box.dataset.for);
+        const a = relRect(anchor);
+        const w = box.offsetWidth;
+        const h = box.offsetHeight;
         const align = box.dataset.align || 'center';
-        let x = align === 'left'
-          ? clamp(a.cx - w - 12, SIDE_PAD, stageW - w - SIDE_PAD)
-          : clamp(a.cx - w / 2, SIDE_PAD, stageW - w - SIDE_PAD);
+        const alignWith = box.dataset.alignWith;
+        let x;
+        if (alignWith) {
+          const ref = positions.get(alignWith) || (() => {
+            const el = document.querySelector(`.callout[data-for="${alignWith}"]`);
+            return el ? { left: relRect(el).left } : null;
+          })();
+          x = ref
+            ? clamp(ref.left, SIDE_PAD, stageW - w - SIDE_PAD)
+            : clamp(a.cx - w / 2, SIDE_PAD, stageW - w - SIDE_PAD);
+        } else {
+          x = align === 'left'
+            ? clamp(a.cx - w - 12, SIDE_PAD, stageW - w - SIDE_PAD)
+            : clamp(a.cx - w / 2, SIDE_PAD, stageW - w - SIDE_PAD);
+        }
+        const nudgeX = parseFloat(box.dataset.nudgeX);
+        if (Number.isFinite(nudgeX)) {
+          x = clamp(x + nudgeX, SIDE_PAD, stageW - w - SIDE_PAD);
+        }
+
+        const preferredX = x;
         let y = startY;
         let candidate = { left: x, top: y, right: x + w, bottom: y + h };
-
         let guard = 0;
-        while (placed.some((p) => overlaps(candidate, p)) && guard < 12) {
+        while (placed.some((p) => overlaps(candidate, p)) && guard < 40) {
+          if (!alignWith) {
+            const blocker = placed.find((p) => overlaps(candidate, p));
+            if (blocker && x + w + BOX_GAP <= stageW - SIDE_PAD) {
+              x = Math.min(blocker.right + BOX_GAP, stageW - w - SIDE_PAD);
+              candidate = { left: x, top: y, right: x + w, bottom: y + h };
+              if (!placed.some((p) => overlaps(candidate, p))) break;
+            }
+          }
           y += h + ROW_GAP;
+          x = preferredX;
           candidate = { left: x, top: y, right: x + w, bottom: y + h };
           guard += 1;
         }
+        commit(box, x, y, w, h);
+      });
 
-        box.style.left = x + 'px';
-        box.style.top = y + 'px';
-        placed.push(candidate);
+      // Second pass: sit beside a reference box (same row), below the timeline
+      // Resolve chains (e.g. 1.B after 1.A, then 1.C after 1.B)
+      const pending = [...secondary];
+      let safety = 0;
+      while (pending.length && safety < 20) {
+        safety += 1;
+        let progressed = false;
+        for (let i = 0; i < pending.length; i++) {
+          const box = pending[i];
+          const refId = box.dataset.placeBefore || box.dataset.placeAfter;
+          if (!positions.has(refId)) continue;
+
+          const w = box.offsetWidth;
+          const h = box.offsetHeight;
+          const ref = positions.get(refId);
+          let y = ref.top;
+          let x = box.dataset.placeBefore
+            ? clamp(ref.left - w - BOX_GAP, SIDE_PAD, stageW - w - SIDE_PAD)
+            : clamp(ref.left + ref.width + BOX_GAP, SIDE_PAD, stageW - w - SIDE_PAD);
+
+          const preferredX = x;
+          let candidate = { left: x, top: y, right: x + w, bottom: y + h };
+
+          // Keep TF 1.A/B/C packed tightly — don't slide 1.C away from 1.B
+          const packTight = ['tf1a', 'tf1b', 'tf1c'].includes(box.dataset.for) ||
+            ['tf1a', 'tf1b', 'tf1c'].includes(refId);
+
+          if (!packTight) {
+            let guard = 0;
+            while (placed.some((p) => overlaps(candidate, p)) && guard < 40) {
+              if (box.dataset.placeBefore) {
+                x = Math.max(SIDE_PAD, x - (w + BOX_GAP));
+              } else {
+                x = Math.min(stageW - w - SIDE_PAD, x + BOX_GAP);
+              }
+              candidate = { left: x, top: y, right: x + w, bottom: y + h };
+              if (!placed.some((p) => overlaps(candidate, p))) break;
+              if (guard < 20) {
+                guard += 1;
+                continue;
+              }
+              y += h + ROW_GAP;
+              x = preferredX;
+              candidate = { left: x, top: y, right: x + w, bottom: y + h };
+              guard += 1;
+            }
+          }
+
+          commit(box, x, y, w, h);
+          pending.splice(i, 1);
+          progressed = true;
+          break;
+        }
+        if (!progressed) break;
+      }
+      // Any unresolved: fall back to anchor centering on the bottom start row
+      pending.forEach((box) => {
+        const w = box.offsetWidth;
+        const h = box.offsetHeight;
+        const a = relRect(document.getElementById(box.dataset.for));
+        const x = clamp(a.cx - w / 2, SIDE_PAD, stageW - w - SIDE_PAD);
+        commit(box, x, startY, w, h);
       });
 
       return placed.reduce((maxBottom, p) => Math.max(maxBottom, p.bottom), 0);
     }
 
-    function elbowPath(start, end, side) {
-      const midY = (start.y + end.y) / 2;
-      return `M ${start.x} ${start.y} L ${start.x} ${midY} L ${end.x} ${midY} L ${end.x} ${end.y}`;
+    function segmentHitsBox(x1, y1, x2, y2, box, pad = 6) {
+      const left = Math.min(x1, x2) - 1;
+      const right = Math.max(x1, x2) + 1;
+      const top = Math.min(y1, y2) - 1;
+      const bottom = Math.max(y1, y2) + 1;
+      return !(right < box.left - pad || left > box.right + pad ||
+               bottom < box.top - pad || top > box.bottom + pad);
+    }
+
+    function pathHitsBoxes(points, boxes, ignoreId) {
+      for (let i = 0; i < points.length - 1; i++) {
+        const a = points[i];
+        const b = points[i + 1];
+        for (const box of boxes) {
+          if (box.id === ignoreId) continue;
+          if (segmentHitsBox(a.x, a.y, b.x, b.y, box)) return true;
+        }
+      }
+      return false;
     }
 
     function layout() {
@@ -540,10 +813,10 @@
       const bottomBoxes = callouts.filter((b) => b.dataset.side === 'bottom')
         .sort((a, b) => relRect(document.getElementById(a.dataset.for)).cx - relRect(document.getElementById(b.dataset.for)).cx);
 
-      const topHeight = placeGroup(topBoxes, 'top', relRect(container));
-      stage.style.paddingTop = (topHeight + BOX_GAP) + 'px';
+      const topHeight = placeTopRow(topBoxes);
+      stage.style.paddingTop = (topHeight + TOP_GUTTER) + 'px';
 
-      const bottomHeight = placeGroup(bottomBoxes, 'bottom', relRect(container));
+      const bottomHeight = placeBottomGroup(bottomBoxes, relRect(container));
       const containerBottom = relRect(container).bottom;
       const extraBottom = Math.max(0, bottomHeight - containerBottom) + 8;
       stage.style.paddingBottom = extraBottom + 'px';
@@ -559,27 +832,71 @@
       svg.setAttribute('height', h);
       svg.innerHTML = '';
 
+      const obstacles = [...document.querySelectorAll('.callout')].map((box) => {
+        const r = relRect(box);
+        return {
+          id: box.dataset.for,
+          side: box.dataset.side,
+          left: r.left,
+          top: r.top,
+          right: r.right,
+          bottom: r.bottom,
+          cx: r.cx,
+          cy: r.cy
+        };
+      });
+
+      // Also treat the timeline container as an obstacle for the horizontal run
+      // (lines may enter it only on the final vertical stub)
+      const c = relRect(container);
+
       document.querySelectorAll('.callout').forEach((box) => {
         const id = box.dataset.for;
         const anchor = document.getElementById(id);
         const b = relRect(box);
         const a = relRect(anchor);
         const side = box.dataset.side;
-        const align = box.dataset.align || 'center';
-        const lineStyle = box.dataset.line || 'elbow';
-        const end = { x: a.left, y: a.cy };
-        let start;
-        let pathD;
+        const end = { x: a.cx, y: a.cy };
+        // Attach to the middle of the edge facing the timeline
+        const start = side === 'top'
+          ? { x: b.cx, y: b.bottom }
+          : { x: b.cx, y: b.top };
 
-        if (lineStyle === 'diagonal') {
-          start = { x: b.cx, y: b.top };
-          pathD = `M ${start.x} ${start.y} L ${end.x} ${end.y}`;
+        // Highway in the clear gutter between callouts and the container
+        const topBottoms = obstacles.filter((o) => o.side === 'top').map((o) => o.bottom);
+        const bottomTops = obstacles.filter((o) => o.side === 'bottom').map((o) => o.top);
+        let highwayY;
+        if (side === 'top') {
+          const belowBoxes = topBottoms.length ? Math.max(...topBottoms) + 12 : b.bottom + 14;
+          highwayY = Math.min(belowBoxes, c.top - 10);
+          highwayY = Math.max(highwayY, b.bottom + 8);
         } else {
-          const startX = align === 'left' ? b.right : b.cx;
-          start = side === 'top'
-            ? { x: startX, y: b.bottom }
-            : { x: startX, y: b.top };
-          pathD = elbowPath(start, end, side);
+          const aboveBoxes = bottomTops.length ? Math.min(...bottomTops) - 12 : b.top - 14;
+          highwayY = Math.max(aboveBoxes, c.bottom + 10);
+          highwayY = Math.min(highwayY, b.top - 8);
+        }
+
+        let pathD = null;
+        const tryYs = [highwayY, highwayY + 18, highwayY - 18, highwayY + 36, highwayY - 36, (start.y + end.y) / 2];
+        for (const y of tryYs) {
+          const candidate = [
+            start,
+            { x: start.x, y },
+            { x: end.x, y },
+            end
+          ];
+          if (!pathHitsBoxes(candidate, obstacles, id)) {
+            pathD = candidate.map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x} ${p.y}`).join(' ');
+            break;
+          }
+        }
+        if (!pathD) {
+          pathD = [
+            start,
+            { x: start.x, y: highwayY },
+            { x: end.x, y: highwayY },
+            end
+          ].map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x} ${p.y}`).join(' ');
         }
 
         const lineColor = getComputedStyle(box).borderColor || LINE_COLOR;
