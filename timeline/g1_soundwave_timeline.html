@@ -49,7 +49,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s, background 0.2s;
       overflow-wrap: anywhere;
       word-wrap: break-word;
     }
@@ -57,6 +57,17 @@
     .callout:hover {
       box-shadow: 0 6px 15px rgba(168, 85, 247, 0.3);
       background: rgba(107, 33, 168, 0.8);
+    }
+
+    /* Dual-link callouts (e.g. TF 2.E): purple fill, red border */
+    .callout[data-also-for] {
+      border-color: #dc5555;
+    }
+
+    .callout[data-also-for]:hover {
+      border-color: #dc5555;
+      background: rgba(107, 33, 168, 0.8);
+      box-shadow: 0 6px 15px rgba(220, 85, 85, 0.35);
     }
 
     .callout.microchange {
@@ -269,42 +280,6 @@
       pointer-events: none;
     }
 
-    .save-ui {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      z-index: 50;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-family: 'Space Grotesk', sans-serif;
-    }
-
-    .save-ui button {
-      appearance: none;
-      border: 1px solid #a855f7;
-      background: rgba(88, 28, 135, 0.85);
-      color: #e9d5ff;
-      border-radius: 8px;
-      padding: 10px 14px;
-      font: inherit;
-      font-weight: 700;
-      font-size: 13px;
-      cursor: pointer;
-    }
-
-    .save-ui button:hover {
-      background: rgba(107, 33, 168, 0.95);
-    }
-
-    .save-status {
-      font-size: 12px;
-      color: #c084fc;
-      min-width: 9rem;
-    }
-
-    .save-status.ok { color: #86efac; }
-    .save-status.err { color: #f87171; }
   </style>
 </head>
 <body>
@@ -355,7 +330,7 @@
       <ul class="callout-desc callout-list">
         <li contenteditable="true">Takara stamp on battery cover</li>
         <li contenteditable="true">Mold scar in battery compartment</li>
-        <li contenteditable="true">Solid fists</li>
+        <li contenteditable="true">The mold used for Soundbreaker (black Soundblaster prototype)</li>
       </ul>
     </div>
 
@@ -379,23 +354,25 @@
       </ul>
     </div>
 
-    <div class="callout" data-for="tf2e" data-side="bottom" data-place-after="tf2d" style="width: max-content;">
+    <div class="callout" data-for="tf2e" data-also-for="tf2e-japan" data-side="bottom" data-place-after="tf2d" style="width: max-content;">
       <p class="callout-title" contenteditable="true">TF 2.E</p>
       <ul class="callout-desc callout-list">
-        <li contenteditable="true">Internal Hasbro stamp re-added</li>
-        <li contenteditable="true"></li>
+        <li contenteditable="true">Internal Hasbro stamp re-added for Transformers international distribution</li>
+        <li contenteditable="true">The base mold for International Soundwave figures - Japan, French Ceji, Mexican IGA </li>
+        <li contenteditable="true">Slotted/hollow wrists</li>
       </ul>
     </div>
 
-    <div class="callout japan" data-for="vsy" data-side="bottom" data-place-after="tf2e" style="width: 150px; max-width: 150px;">
+    <div class="callout japan" data-for="tf3f" data-side="bottom" data-place-after="tf2e" style="width: 150px; max-width: 150px;">
       <p class="callout-title" contenteditable="true">TF 3.F - Oct 1986</p>
       <ul class="callout-desc callout-list">
-        <li contenteditable="true">Retooled with external hinge</li>
-        <li contenteditable="true">Dual-cassette door design</li>
+        <li contenteditable="true">External buttons and hinge retooling</li>
+        <li contenteditable="true">Hasbro/Takara co-branding maintained</li>
+        <li contenteditable="true">Mold not used outside of Japan until 2004 TFC</li>
       </ul>
     </div>
 
-    <div class="callout japan" data-for="soundblaster" data-side="bottom" data-place-after="vsy" style="width: max-content;">
+    <div class="callout japan" data-for="soundblaster" data-side="bottom" data-place-after="tf3f" style="width: max-content;">
       <p class="callout-title" contenteditable="true">TF 3.G Soundblaster - Jul 1987</p>
       <ul class="callout-desc callout-list">
         <li contenteditable="true">Retooled chest to hold two cassettes</li>
@@ -506,7 +483,7 @@
             <div class="empty-space" style="flex: 7;"></div>
             <div class="span" style="flex: 6;">
               <i class="anchor" id="tf2d" style="left: 23%;"></i>
-              <i class="anchor" id="tf2e" style="left: 55%;"></i>
+              <i class="anchor" id="tf2e" style="left: 50%;"></i>
             </div>
             <div class="empty-space" style="flex: 19;"></div>
           </div>
@@ -516,23 +493,19 @@
       <div class="track">
         <div class="track-title japan">Takara<br>Transformers<br>D17</div>
         <div class="lane">
-          <!-- 1983 through July 1985 Empty (11 quarters) -->
-          <div class="empty-space" style="flex: 11;"></div>
-          <!-- Oct 1985 through end of 1987 (9 quarters) — continuous Japan bar -->
-          <div class="span japan" style="flex: 9;">
-            <i class="anchor" id="vsy" style="left: 44%;"></i>
-            <i class="anchor" id="soundblaster" style="left: 78%;"></i>
+          <!-- 1983 through Apr 1985 Empty (10 quarters) -->
+          <div class="empty-space" style="flex: 10;"></div>
+          <!-- July 1985 through end of 1987 (10 quarters) -->
+          <div class="span japan" style="flex: 10;">
+            <i class="anchor" id="tf2e-japan" style="left: 0%;"></i>
+            <i class="anchor" id="tf3f" style="left: 50%;"></i>
+            <i class="anchor" id="soundblaster" style="left: 80%;"></i>
           </div>
           <!-- 1988 through 1990 Empty (12 quarters) -->
           <div class="empty-space" style="flex: 12;"></div>
         </div>
       </div>
     </div>
-  </div>
-
-  <div class="save-ui">
-    <span class="save-status" id="save-status">Ready</span>
-    <button type="button" id="save-btn">Save to HTML</button>
   </div>
 
   <script>
@@ -846,23 +819,20 @@
         };
       });
 
-      // Also treat the timeline container as an obstacle for the horizontal run
-      // (lines may enter it only on the final vertical stub)
       const c = relRect(container);
 
-      document.querySelectorAll('.callout').forEach((box) => {
+      function drawConnector(box, anchorId, lineColor) {
+        const anchor = document.getElementById(anchorId);
+        if (!anchor) return;
         const id = box.dataset.for;
-        const anchor = document.getElementById(id);
         const b = relRect(box);
         const a = relRect(anchor);
         const side = box.dataset.side;
         const end = { x: a.cx, y: a.cy };
-        // Attach to the middle of the edge facing the timeline
         const start = side === 'top'
           ? { x: b.cx, y: b.bottom }
           : { x: b.cx, y: b.top };
 
-        // Highway in the clear gutter between callouts and the container
         const topBottoms = obstacles.filter((o) => o.side === 'top').map((o) => o.bottom);
         const bottomTops = obstacles.filter((o) => o.side === 'bottom').map((o) => o.top);
         let highwayY;
@@ -899,8 +869,7 @@
           ].map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x} ${p.y}`).join(' ');
         }
 
-        const lineColor = getComputedStyle(box).borderColor || LINE_COLOR;
-        const active = activeAnchor === id;
+        const active = activeAnchor === id || activeAnchor === anchorId;
 
         const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
         path.setAttribute('d', pathD);
@@ -926,6 +895,20 @@
           circle.style.filter = `drop-shadow(0 0 8px ${lineColor})`;
         }
         svg.appendChild(circle);
+      }
+
+      document.querySelectorAll('.callout').forEach((box) => {
+        const primaryColor = box.dataset.alsoFor
+          ? LINE_COLOR
+          : (getComputedStyle(box).borderColor || LINE_COLOR);
+        drawConnector(box, box.dataset.for, primaryColor);
+        if (box.dataset.alsoFor) {
+          const alsoAnchor = document.getElementById(box.dataset.alsoFor);
+          const alsoColor = alsoAnchor && alsoAnchor.closest('.span.japan')
+            ? '#dc5555'
+            : primaryColor;
+          drawConnector(box, box.dataset.alsoFor, alsoColor);
+        }
       });
     }
 
@@ -933,12 +916,14 @@
 
     function setActiveAnchor(id) {
       activeAnchor = id;
-      document.querySelectorAll('.callout').forEach((box) => {
-        box.classList.toggle('is-active', box.dataset.for === id);
+      const box = document.querySelector(`.callout[data-for="${id}"]`);
+      const alsoId = box && box.dataset.alsoFor;
+      document.querySelectorAll('.callout').forEach((el) => {
+        el.classList.toggle('is-active', el.dataset.for === id);
       });
       document.querySelectorAll('.span').forEach((span) => {
-        const anchor = span.querySelector('.anchor');
-        span.classList.toggle('is-active', !!(anchor && anchor.id === id));
+        const ids = [...span.querySelectorAll('.anchor')].map((a) => a.id);
+        span.classList.toggle('is-active', ids.includes(id) || (alsoId && ids.includes(alsoId)));
       });
       drawLines();
     }
@@ -968,156 +953,6 @@
     document.addEventListener('input', layout);
     window.addEventListener('load', layout);
     layout();
-
-    /* ---- Persist contenteditable text back to the HTML file ---- */
-    let fileHandle = null;
-    let saveTimer = null;
-    const saveStatus = document.getElementById('save-status');
-    const saveBtn = document.getElementById('save-btn');
-
-    function setSaveStatus(text, kind) {
-      saveStatus.textContent = text;
-      saveStatus.classList.remove('ok', 'err');
-      if (kind) saveStatus.classList.add(kind);
-    }
-
-    function normalizeEditable(el) {
-      return (el.innerText || el.textContent || '')
-        .replace(/\u00a0/g, ' ')
-        .replace(/\n+$/g, '')
-        .trimEnd();
-    }
-
-    function buildSavableHtml() {
-      const root = document.documentElement.cloneNode(true);
-
-      root.querySelectorAll('.callout').forEach((box) => {
-        box.classList.remove('is-active');
-        const width = box.style.width;
-        box.removeAttribute('style');
-        if (width) box.style.width = width;
-      });
-
-      root.querySelectorAll('.span').forEach((span) => {
-        span.classList.remove('is-active');
-      });
-
-      const stageClone = root.querySelector('.stage');
-      if (stageClone) stageClone.removeAttribute('style');
-
-      const svgClone = root.querySelector('.connectors');
-      if (svgClone) {
-        svgClone.innerHTML = '';
-        ['viewBox', 'width', 'height'].forEach((attr) => svgClone.removeAttribute(attr));
-      }
-
-      const statusClone = root.querySelector('#save-status');
-      if (statusClone) {
-        statusClone.textContent = 'Ready';
-        statusClone.classList.remove('ok', 'err');
-      }
-
-      // Pull live text from the page (clone may contain browser-inserted markup)
-      document.querySelectorAll('[contenteditable="true"]').forEach((live, index) => {
-        const clones = root.querySelectorAll('[contenteditable="true"]');
-        const target = clones[index];
-        if (!target) return;
-        target.textContent = normalizeEditable(live);
-      });
-
-      return '<!DOCTYPE html>\n' + root.outerHTML + '\n';
-    }
-
-    async function ensureFileHandle() {
-      if (fileHandle) {
-        const perm = await fileHandle.queryPermission({ mode: 'readwrite' });
-        if (perm === 'granted') return fileHandle;
-        const next = await fileHandle.requestPermission({ mode: 'readwrite' });
-        if (next === 'granted') return fileHandle;
-        fileHandle = null;
-      }
-
-      if (!window.showOpenFilePicker) {
-        throw new Error('File picker unavailable — download fallback will be used');
-      }
-
-      setSaveStatus('Choose g1_soundwave_timeline.html…');
-      const handles = await window.showOpenFilePicker({
-        multiple: false,
-        types: [{ description: 'HTML', accept: { 'text/html': ['.html'] } }]
-      });
-      fileHandle = handles[0];
-      const perm = await fileHandle.requestPermission({ mode: 'readwrite' });
-      if (perm !== 'granted') {
-        fileHandle = null;
-        throw new Error('Write permission denied');
-      }
-      return fileHandle;
-    }
-
-    function downloadHtml(html) {
-      const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'g1_soundwave_timeline.html';
-      a.click();
-      URL.revokeObjectURL(url);
-    }
-
-    async function saveToHtml({ interactive = true } = {}) {
-      const html = buildSavableHtml();
-      try {
-        if (!window.showOpenFilePicker) {
-          downloadHtml(html);
-          setSaveStatus('Downloaded — replace the file manually', 'ok');
-          return;
-        }
-        const handle = interactive || fileHandle
-          ? await ensureFileHandle()
-          : null;
-        if (!handle) {
-          setSaveStatus('Click Save to link the HTML file');
-          return;
-        }
-        const writable = await handle.createWritable();
-        await writable.write(html);
-        await writable.close();
-        setSaveStatus('Saved to HTML', 'ok');
-      } catch (err) {
-        if (err && err.name === 'AbortError') {
-          setSaveStatus('Save cancelled');
-          return;
-        }
-        console.warn(err);
-        if (interactive) {
-          downloadHtml(html);
-          setSaveStatus('Downloaded — replace the file manually', 'err');
-        } else {
-          setSaveStatus('Save failed', 'err');
-        }
-      }
-    }
-
-    function queueSave() {
-      clearTimeout(saveTimer);
-      saveTimer = setTimeout(() => saveToHtml({ interactive: false }), 500);
-    }
-
-    saveBtn.addEventListener('click', () => saveToHtml({ interactive: true }));
-
-    document.addEventListener('keydown', (e) => {
-      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's') {
-        e.preventDefault();
-        saveToHtml({ interactive: true });
-      }
-    });
-
-    document.querySelectorAll('[contenteditable="true"]').forEach((el) => {
-      el.addEventListener('blur', () => queueSave());
-    });
-
-    setSaveStatus(fileHandle ? 'Linked' : 'Click Save once to link the file');
   </script>
 
 
