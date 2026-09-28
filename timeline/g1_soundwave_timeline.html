@@ -108,12 +108,49 @@
       color: #c4b896;
     }
 
+    .callout.china {
+      background: rgba(160, 70, 20, 0.55);
+      border-color: #f59e0b;
+      max-width: none;
+      white-space: nowrap;
+    }
+
+    .callout.china:hover {
+      background: rgba(190, 90, 25, 0.75);
+      box-shadow: 0 6px 15px rgba(245, 158, 11, 0.35);
+    }
+
+    .callout.china .callout-title {
+      color: #fde68a;
+    }
+
+    .callout.china .callout-desc {
+      color: #fcd34d;
+    }
+
     .callout-title {
       font-weight: 700;
       font-size: 14px;
       color: #e9d5ff;
       margin: 0 0 6px 0;
       overflow-wrap: anywhere;
+    }
+
+    a.callout-title:any-link {
+      text-decoration: none;
+      color: #e9d5ff;
+    }
+
+    a.callout-title:hover {
+      text-decoration: underline;
+    }
+
+    .callout.soundblaster a.callout-title:any-link {
+      color: #f0e6c8;
+    }
+
+    .callout.china a.callout-title:any-link {
+      color: #fde68a;
     }
 
     .callout-desc {
@@ -279,6 +316,11 @@
       border-color: #d4af37;
     }
 
+    .span.china {
+      background: rgba(245, 158, 11, 0.28);
+      border-color: #f59e0b;
+    }
+
     .span.is-active {
       background: rgba(168, 85, 247, 0.55);
       box-shadow: 0 0 12px rgba(168, 85, 247, 0.45);
@@ -295,8 +337,39 @@
     }
 
     .span.soundblaster.is-active {
-      background: rgba(70, 70, 74, 0.95);
-      box-shadow: 0 0 12px rgba(212, 175, 55, 0.45);
+      background: rgba(212, 175, 55, 0.72);
+      border-color: #ffe9a0;
+      box-shadow: 0 0 12px rgba(212, 175, 55, 0.85);
+    }
+
+    .span.china.is-active {
+      background: rgba(245, 158, 11, 0.55);
+      box-shadow: 0 0 12px rgba(245, 158, 11, 0.45);
+    }
+
+    .mold-label {
+      position: absolute;
+      right: calc(100% + 18px);
+      top: 50%;
+      transform: translateY(-50%);
+      color: #a855f7;
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    .span.japan > .mold-label {
+      color: #dc5555;
+    }
+
+    .span.soundblaster > .mold-label {
+      color: #d4af37;
+    }
+
+    .mold-label.end {
+      right: auto;
+      left: calc(100% + 10px);
     }
 
     .anchor {
@@ -315,8 +388,19 @@
   <div class="stage">
     <svg class="connectors" aria-hidden="true"></svg>
 
+    <div class="callout china" data-for="tf2f" data-side="top" style="width: max-content;">
+      <a class="callout-title" href="variants/TF2F.html">TF 2.F - Chinese Reissues</a>
+      <ul class="callout-desc callout-list">
+        <li contenteditable="true">Hasbro production moves to China 1989–1992</li>
+        <li contenteditable="true">Based on Ceji/TF 2.E mold with original internal hinge and buttons</li>
+        <li contenteditable="true">Made in France and Takara Japan stamps blocked</li>
+        <li contenteditable="true">Hasbro stamp remains</li>
+        <li contenteditable="true">Painted Buzzsaw</li>
+      </ul>
+    </div>
+
     <div class="callout microchange" data-for="peach" data-side="top" style="width: max-content;">
-      <p class="callout-title" contenteditable="true">Peach Prototype - Early 1983</p>
+      <a class="callout-title" href="variants/PeachPrototype.html">Peach Prototype - Early 1983</a>
       <ul class="callout-desc callout-list">
         <li contenteditable="true">Hardcopy cast</li>
         <li contenteditable="true">No interior deck details</li>
@@ -326,7 +410,7 @@
     </div>
 
     <div class="callout microchange" data-for="mc1a" data-side="top" style="width: max-content;">
-      <p class="callout-title" contenteditable="true">MC 1.A - Sept 1983</p>
+      <a class="callout-title" href="variants/MC1A.html">MC 1.A - Sept 1983</a>
       <ul class="callout-desc callout-list">
         <li contenteditable="true">No interior deck detail</li>
         <li contenteditable="true">Interior Takara stamp</li>
@@ -335,7 +419,7 @@
     </div>
 
     <div class="callout microchange" data-for="mc1b" data-side="top" style="width: max-content;">
-      <p class="callout-title" contenteditable="true">MC 1.B</p>
+      <a class="callout-title" href="variants/MC1B.html">MC 1.B</a>
       <ul class="callout-desc callout-list">
         <li contenteditable="true">Interior deck detail added</li>
         <li contenteditable="true">Interior Takara stamp</li>
@@ -344,7 +428,7 @@
     </div>
 
     <div class="callout" data-for="tf1a" data-side="bottom" data-align-with="peach" style="width: 150px; max-width: 150px;">
-      <p class="callout-title" contenteditable="true">TF 1.A</p>
+      <a class="callout-title" href="variants/TF1A.html">TF 1.A</a>
       <ul class="callout-desc callout-list">
         <li contenteditable="true">Internal Takara stamp from MC 1.B</li>
         <li contenteditable="true">CassetteMan removed from tape door</li>
@@ -354,60 +438,62 @@
     </div>
 
     <div class="callout" data-for="tf1b" data-side="bottom" data-place-after="tf1a" style="width: 150px; max-width: 150px;">
-      <p class="callout-title" contenteditable="true">TF 1.B</p>
+      <a class="callout-title" href="variants/TF1B.html">TF 1.B</a>
       <ul class="callout-desc callout-list">
         <li contenteditable="true">Takara stamp on battery cover</li>
         <li contenteditable="true">Mold scar in battery compartment</li>
-        <li contenteditable="true">The mold used for Soundbreaker (black Soundblaster prototype)</li>
+        <li contenteditable="true">Used for the Black Soundblaster prototype</li>
       </ul>
     </div>
 
     <div class="callout" data-for="tf1c" data-side="bottom" data-place-after="tf1b" style="width: 150px; max-width: 150px;">
-      <p class="callout-title" contenteditable="true">TF 1.C</p>
+      <a class="callout-title" href="variants/TF1C.html">TF 1.C</a>
       <ul class="callout-desc callout-list">
         <li contenteditable="true">Hasbro and Takara Internal Stamp for international TF sales</li>
         <li contenteditable="true">1.B Takara stamp on battery cover blocked</li>
         <li contenteditable="true">Solid fists</li>
         <li contenteditable="true">Some have rubsigns</li>
+        <li contenteditable="true">Least common mold variant</li>
       </ul>
     </div>
 
     <div class="callout" data-for="tf2d" data-side="bottom" data-place-after="tf1c" style="width: 150px; max-width: 150px;">
-      <p class="callout-title" contenteditable="true">TF 2.D</p>
+      <a class="callout-title" href="variants/TF2D.html">TF 2.D</a>
       <ul class="callout-desc callout-list">
         <li contenteditable="true">New mold worked concurrently with 1.B/1.C</li>
         <li contenteditable="true">Slotted/hollow wrists</li>
         <li contenteditable="true">Takara internal stamp</li>
         <li contenteditable="true">No Hasbro stamp</li>
-        <li contenteditable="true">Mold holes filled</li>
+        <li contenteditable="true">Mold holes now filled</li>
         <li contenteditable="true">Some have rubsigns</li>
       </ul>
     </div>
 
     <div class="callout" data-for="tf2e" data-also-for="tf2e-japan" data-side="bottom" data-place-after="tf2d" style="width: max-content;">
-      <p class="callout-title" contenteditable="true">TF 2.E</p>
+      <a class="callout-title" href="variants/TF2E.html">TF 2.E</a>
       <ul class="callout-desc callout-list">
-        <li contenteditable="true">Internal Hasbro stamp re-added for Transformers international distribution</li>
-        <li contenteditable="true">The base mold for International Soundwave figures - French Ceji, Mexican IGA </li>
-        <li contenteditable="true">Slotted/hollow wrists</li>
-        <li contenteditable="true">The version include in the 1985 VSY giftset with Grimlock and Frenzy</li>
-        <li contenteditable="true">Most should have rubsigns</li>
+        <li contenteditable="true">Internal Hasbro stamp re-added for international distribution</li>
+        <li contenteditable="true">Basis for Japanese Takara D17, French Ceji, Mexican IGA, and Chinese Soundwave Reissues</li>
+        <li contenteditable="true">Slotted wrists</li>
+        <li contenteditable="true">Used in the 1985 VSY giftset with Grimlock and Frenzy</li>
+        <li contenteditable="true">Majority should be rubsigns</li>
+        <li contenteditable="true">Most common variant</li>
       </ul>
     </div>
 
-    <div class="callout japan" data-for="tf3f" data-side="bottom" data-place-after="tf2e" style="width: 150px; max-width: 150px;">
-      <p class="callout-title" contenteditable="true">TF 3.F - Oct 1986</p>
+    <div class="callout japan" data-for="tf3f" data-side="bottom" data-place-after="tf2e" style="width: min-content; max-width: none;">
+      <a class="callout-title" href="variants/TF3F.html" style="white-space: nowrap;">TF 3.F External Buttons</a>
       <ul class="callout-desc callout-list">
-        <li contenteditable="true">External buttons and hinge retooling</li>
-        <li contenteditable="true">Hasbro/Takara co-branding maintained</li>
+        <li contenteditable="true">External buttons and hinge retooled</li>
+        <li contenteditable="true">Hasbro/Takara co-branded stamo</li>
         <li contenteditable="true">Mold not used outside of Japan until 2004 TFC</li>
       </ul>
     </div>
 
     <div class="callout soundblaster" data-for="soundblaster" data-side="bottom" data-place-after="tf3f" style="width: max-content;">
-      <p class="callout-title" contenteditable="true">TF 3.G Soundblaster - Jul 1987</p>
+      <a class="callout-title" href="variants/TF3G.html">TF 3.G Soundblaster - Jul 1987</a>
       <ul class="callout-desc callout-list">
-        <li contenteditable="true">Retooled chest to hold two cassettes</li>
+        <li contenteditable="true">Dual-cassette red door</li>
         <li contenteditable="true">Black color scheme</li>
       </ul>
     </div>
@@ -497,43 +583,64 @@
             <div class="empty-space" style="flex: 6;"></div>
             <!-- July 1984 – early 1985 -->
             <div class="span" style="flex: 3;">
+              <span class="mold-label end">Mold 1</span>
               <i class="anchor" id="tf1a" style="left: 0%;"></i>
               <i class="anchor" id="tf1b" style="left: 45%;"></i>
               <i class="anchor" id="tf1c" style="left: 80%;"></i>
             </div>
             <div class="empty-space" style="flex: 23;"></div>
           </div>
-          <!-- Lower bar: TF 2.D / 2.E — offset down, overlaps in time (concurrent mold) -->
+          <!-- Lower bar: TF 2.D / 2.E, then TF 2.F from the July–Oct 1989 midpoint -->
           <div class="lane-row">
             <!-- Starts mid–late TF1 era (Oct 1984) -->
             <div class="empty-space" style="flex: 7;"></div>
             <div class="span" style="flex: 6;">
+              <span class="mold-label end">Mold 2</span>
               <i class="anchor" id="tf2d" style="left: 23%;"></i>
               <i class="anchor" id="tf2e" style="left: 50%;"></i>
             </div>
-            <div class="empty-space" style="flex: 19;"></div>
+            <div class="empty-space" style="flex: 14;"></div>
+            <div class="span china" style="flex: 5;">
+              <i class="anchor" id="tf2f" style="left: 0%;"></i>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="track">
         <div class="track-title japan">Takara<br>Transformers<br>D17</div>
-        <div class="lane">
-          <!-- 1983 through Apr 1985 Empty (10 quarters) -->
-          <div class="empty-space" style="flex: 10;"></div>
-          <!-- Red D17: July 1985 – Apr 1987 (ends at July 1987) -->
-          <div class="span japan" style="flex: 8;">
-            <i class="anchor" id="tf2e-japan" style="left: 0%;"></i>
-            <i class="anchor" id="tf3f" style="left: 62%;"></i>
+        <div class="lane lane-stack">
+          <!-- Upper bar: TF 2.E Japan, through the start of TF 3.F -->
+          <div class="lane-row">
+            <!-- 1983 through Apr 1985 -->
+            <div class="empty-space" style="flex: 10;"></div>
+            <!-- July 1985 – Oct 1986 -->
+            <div class="span japan" style="flex: 4.96;">
+              <span class="mold-label end">Mold 2</span>
+              <i class="anchor" id="tf2e-japan" style="left: 0%;"></i>
+            </div>
+            <!-- Oct 1986 through 1990 -->
+            <div class="empty-space" style="flex: 17.04;"></div>
           </div>
-          <!-- Soundblaster: July 1987 – end of 1987 -->
-          <div class="span soundblaster" style="flex: 2;">
-            <i class="anchor" id="soundblaster" style="left: 0%;"></i>
+          <!-- Lower bar: TF 3.F, then Soundblaster -->
+          <div class="lane-row">
+            <!-- 1983 through Sept 1986 -->
+            <div class="empty-space" style="flex: 14.96;"></div>
+            <!-- Oct 1986 – June 1987 -->
+            <div class="span japan" style="flex: 3.04;">
+              <i class="anchor" id="tf3f" style="left: 0%;"></i>
+            </div>
+            <!-- Soundblaster: July 1987 – end of 1987 -->
+            <div class="span soundblaster" style="flex: 2;">
+              <span class="mold-label end">Mold 3 (Japan-only)</span>
+              <i class="anchor" id="soundblaster" style="left: 0%;"></i>
+            </div>
+            <!-- 1988 through 1990 -->
+            <div class="empty-space" style="flex: 12;"></div>
           </div>
-          <!-- 1988 through 1990 Empty (12 quarters) -->
-          <div class="empty-space" style="flex: 12;"></div>
         </div>
       </div>
+
     </div>
   </div>
 
@@ -952,7 +1059,8 @@
       });
       document.querySelectorAll('.span').forEach((span) => {
         const ids = [...span.querySelectorAll('.anchor')].map((a) => a.id);
-        span.classList.toggle('is-active', ids.includes(id) || (alsoId && ids.includes(alsoId)));
+        const match = ids.includes(id) || (alsoId ? ids.includes(alsoId) : false);
+        span.classList.toggle('is-active', match);
       });
       drawLines();
     }

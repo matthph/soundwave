@@ -1,0 +1,126 @@
+body {
+  margin: 0;
+  padding: 40px 20px;
+  font-family: 'Space Grotesk', sans-serif;
+  background-color: #1a0b2e;
+  background-image:
+    linear-gradient(rgba(138, 43, 226, 0.2) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(138, 43, 226, 0.2) 1px, transparent 1px);
+  background-size: 40px 40px;
+  color: #e2e8f0;
+}
+
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  background: rgba(15, 5, 24, 0.85);
+  border: 2px solid #6b21a8;
+  border-radius: 12px;
+  padding: 28px 32px 32px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(107, 33, 168, 0.3);
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #c084fc;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.back:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  margin: 0 0 18px;
+  font-size: 32px;
+  letter-spacing: 1px;
+  color: #e9d5ff;
+}
+
+ul {
+  margin: 0;
+  padding-left: 1.25em;
+  color: #c084fc;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+li + li {
+  margin-top: 6px;
+}
+
+.page.micro { border-color: #6b9aff; }
+.page.micro h1 { color: #c5d8ff; }
+.page.micro ul,
+.page.micro .back { color: #9eb6f5; }
+
+.page.japan { border-color: #dc5555; }
+.page.japan h1 { color: #fecaca; }
+.page.japan ul,
+.page.japan .back { color: #f0a0a0; }
+
+.page.china { border-color: #f59e0b; }
+.page.china h1 { color: #fde68a; }
+.page.china ul,
+.page.china .back { color: #fcd34d; }
+
+.page.blaster { border-color: #d4af37; }
+.page.blaster h1 { color: #f0e6c8; }
+.page.blaster ul,
+.page.blaster .back { color: #c4b896; }
+
+.gallery {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  margin: 28px 0 0;
+  padding-bottom: 12px;
+}
+
+.gallery figure {
+  flex: 0 0 260px;
+  scroll-snap-align: start;
+  margin: 0;
+}
+
+.frame {
+  height: 260px;
+  border: 1px dashed rgba(192, 132, 252, 0.45);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.28);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.frame:not(:has(img))::before {
+  content: "Photo";
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  opacity: 0.55;
+}
+
+.gallery figcaption {
+  margin-top: 8px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: #c084fc;
+}
+
+.page.micro .gallery figcaption { color: #9eb6f5; }
+.page.japan .gallery figcaption { color: #f0a0a0; }
+.page.china .gallery figcaption { color: #fcd34d; }
+.page.blaster .gallery figcaption { color: #c4b896; }
