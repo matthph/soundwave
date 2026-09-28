@@ -90,24 +90,6 @@
       box-shadow: 0 6px 15px rgba(220, 85, 85, 0.35);
     }
 
-    .callout.soundblaster {
-      background: rgba(45, 45, 48, 0.75);
-      border-color: #d4af37;
-    }
-
-    .callout.soundblaster:hover {
-      background: rgba(58, 58, 62, 0.9);
-      box-shadow: 0 6px 15px rgba(212, 175, 55, 0.35);
-    }
-
-    .callout.soundblaster .callout-title {
-      color: #f0e6c8;
-    }
-
-    .callout.soundblaster .callout-desc {
-      color: #c4b896;
-    }
-
     .callout.china {
       background: rgba(160, 70, 20, 0.55);
       border-color: #f59e0b;
@@ -143,10 +125,6 @@
 
     a.callout-title:hover {
       text-decoration: underline;
-    }
-
-    .callout.soundblaster a.callout-title:any-link {
-      color: #f0e6c8;
     }
 
     .callout.china a.callout-title:any-link {
@@ -311,11 +289,6 @@
       border-color: #dc5555;
     }
 
-    .span.soundblaster {
-      background: rgba(55, 55, 58, 0.85);
-      border-color: #d4af37;
-    }
-
     .span.china {
       background: rgba(245, 158, 11, 0.28);
       border-color: #f59e0b;
@@ -336,15 +309,39 @@
       box-shadow: 0 0 12px rgba(220, 85, 85, 0.45);
     }
 
-    .span.soundblaster.is-active {
-      background: rgba(212, 175, 55, 0.72);
-      border-color: #ffe9a0;
-      box-shadow: 0 0 12px rgba(212, 175, 55, 0.85);
-    }
-
     .span.china.is-active {
       background: rgba(245, 158, 11, 0.55);
       box-shadow: 0 0 12px rgba(245, 158, 11, 0.45);
+    }
+
+    .segment {
+      position: absolute;
+      top: -1px;
+      height: calc(100% + 2px);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.2s, box-shadow 0.2s;
+    }
+
+    .segment.from-start {
+      border-top-left-radius: 999px;
+      border-bottom-left-radius: 999px;
+    }
+
+    .segment.to-end {
+      border-top-right-radius: 999px;
+      border-bottom-right-radius: 999px;
+    }
+
+    .segment.is-active {
+      opacity: 1;
+      background: rgba(168, 85, 247, 0.7);
+      box-shadow: 0 0 12px rgba(168, 85, 247, 0.45);
+    }
+
+    .span.microchange > .segment.is-active {
+      background: rgba(107, 154, 255, 0.7);
+      box-shadow: 0 0 12px rgba(107, 154, 255, 0.45);
     }
 
     .mold-label {
@@ -361,10 +358,6 @@
 
     .span.japan > .mold-label {
       color: #dc5555;
-    }
-
-    .span.soundblaster > .mold-label {
-      color: #d4af37;
     }
 
     .mold-label.end {
@@ -490,7 +483,7 @@
       </ul>
     </div>
 
-    <div class="callout soundblaster" data-for="soundblaster" data-side="bottom" data-place-after="tf3f" style="width: max-content;">
+    <div class="callout japan" data-for="soundblaster" data-side="bottom" data-place-after="tf3f" style="width: max-content;">
       <a class="callout-title" href="variants/TF3G.html">TF 3.G Soundblaster - Jul 1987</a>
       <ul class="callout-desc callout-list">
         <li contenteditable="true">Dual-cassette red door</li>
@@ -565,6 +558,9 @@
         <div class="lane">
           <!-- Jan 1983 – Apr 1985 (Peach + MC 1.A / 1.B) -->
           <div class="span microchange" style="flex: 10;">
+            <span class="segment from-start" data-for="peach" style="left: 0%; width: 30%;"></span>
+            <span class="segment" data-for="mc1a" style="left: 30%; width: 15%;"></span>
+            <span class="segment to-end" data-for="mc1b" style="left: 45%; width: 55%;"></span>
             <i class="anchor" id="peach" style="left: 7%;"></i>
             <i class="anchor" id="mc1a" style="left: 30%;"></i>
             <i class="anchor" id="mc1b" style="left: 45%;"></i>
@@ -584,6 +580,9 @@
             <!-- July 1984 – early 1985 -->
             <div class="span" style="flex: 3;">
               <span class="mold-label end">Mold 1</span>
+              <span class="segment from-start" data-for="tf1a" style="left: 0%; width: 45%;"></span>
+              <span class="segment" data-for="tf1b" style="left: 45%; width: 35%;"></span>
+              <span class="segment to-end" data-for="tf1c" style="left: 80%; width: 20%;"></span>
               <i class="anchor" id="tf1a" style="left: 0%;"></i>
               <i class="anchor" id="tf1b" style="left: 45%;"></i>
               <i class="anchor" id="tf1c" style="left: 80%;"></i>
@@ -596,6 +595,8 @@
             <div class="empty-space" style="flex: 7;"></div>
             <div class="span" style="flex: 6;">
               <span class="mold-label end">Mold 2</span>
+              <span class="segment from-start" data-for="tf2d" style="left: 0%; width: 50%;"></span>
+              <span class="segment to-end" data-for="tf2e" style="left: 50%; width: 50%;"></span>
               <i class="anchor" id="tf2d" style="left: 23%;"></i>
               <i class="anchor" id="tf2e" style="left: 50%;"></i>
             </div>
@@ -622,17 +623,25 @@
             <!-- Oct 1986 through 1990 -->
             <div class="empty-space" style="flex: 17.04;"></div>
           </div>
-          <!-- Lower bar: TF 3.F, then Soundblaster -->
+          <!-- Middle bar: TF 3.F, ending where TF 3.G begins -->
           <div class="lane-row">
             <!-- 1983 through Sept 1986 -->
             <div class="empty-space" style="flex: 14.96;"></div>
             <!-- Oct 1986 – June 1987 -->
             <div class="span japan" style="flex: 3.04;">
+              <span class="mold-label end">Mold 3 (Japan-only)</span>
               <i class="anchor" id="tf3f" style="left: 0%;"></i>
             </div>
-            <!-- Soundblaster: July 1987 – end of 1987 -->
-            <div class="span soundblaster" style="flex: 2;">
-              <span class="mold-label end">Mold 3 (Japan-only)</span>
+            <!-- July 1987 through 1990 -->
+            <div class="empty-space" style="flex: 14;"></div>
+          </div>
+          <!-- Lower bar: TF 3.G Soundblaster -->
+          <div class="lane-row">
+            <!-- 1983 through June 1987 -->
+            <div class="empty-space" style="flex: 18;"></div>
+            <!-- July 1987 – end of 1987 -->
+            <div class="span japan" style="flex: 2;">
+              <span class="mold-label end">Mold 3</span>
               <i class="anchor" id="soundblaster" style="left: 0%;"></i>
             </div>
             <!-- 1988 through 1990 -->
@@ -1057,7 +1066,15 @@
       document.querySelectorAll('.callout').forEach((el) => {
         el.classList.toggle('is-active', el.dataset.for === id);
       });
+      document.querySelectorAll('.segment').forEach((seg) => {
+        const match = seg.dataset.for === id || (alsoId ? seg.dataset.for === alsoId : false);
+        seg.classList.toggle('is-active', match);
+      });
       document.querySelectorAll('.span').forEach((span) => {
+        if (span.querySelector('.segment')) {
+          span.classList.remove('is-active');
+          return;
+        }
         const ids = [...span.querySelectorAll('.anchor')].map((a) => a.id);
         const match = ids.includes(id) || (alsoId ? ids.includes(alsoId) : false);
         span.classList.toggle('is-active', match);
@@ -1070,7 +1087,7 @@
       const box = document.querySelector(`.callout[data-for="${id}"]`);
       if (box && (box.matches(':hover') || box.matches(':focus-within'))) return;
       activeAnchor = null;
-      document.querySelectorAll('.callout.is-active, .span.is-active').forEach((el) => {
+      document.querySelectorAll('.callout.is-active, .span.is-active, .segment.is-active').forEach((el) => {
         el.classList.remove('is-active');
       });
       drawLines();
