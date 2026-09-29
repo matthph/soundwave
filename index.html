@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soundwave Archive</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&amp;display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Space Grotesk', sans-serif;
+      color: #e2e8f0;
+      background-color: #120818;
+      background-image:
+        linear-gradient(rgba(138, 43, 226, 0.16) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(138, 43, 226, 0.16) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    .portrait {
+      position: fixed;
+      top: calc(-6vh - 120px);
+      right: calc(-18vw - 320px);
+      height: 150vh;
+      width: auto;
+      max-width: none;
+      object-fit: cover;
+      object-position: center top;
+      opacity: 0.42;
+      filter: saturate(0.72) contrast(0.92) blur(0.4px);
+      mask-image:
+        linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.35) 18%, #000 48%, #000 78%, transparent 100%),
+        linear-gradient(to bottom, transparent 0%, #000 16%, #000 72%, transparent 100%);
+      mask-composite: intersect;
+      -webkit-mask-image:
+        linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.35) 18%, #000 48%, #000 78%, transparent 100%),
+        linear-gradient(to bottom, transparent 0%, #000 16%, #000 72%, transparent 100%);
+      -webkit-mask-composite: source-in;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .glow {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse 46% 58% at 88% 38%, rgba(192, 132, 252, 0.28), transparent 68%),
+        radial-gradient(ellipse 30% 40% at 82% 42%, rgba(255, 196, 160, 0.12), transparent 70%),
+        linear-gradient(90deg, rgba(18, 8, 24, 0.88) 0%, rgba(18, 8, 24, 0.55) 38%, rgba(18, 8, 24, 0.15) 68%, rgba(18, 8, 24, 0.45) 100%);
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 64px 8vw 72px;
+      max-width: 760px;
+    }
+
+    .kicker {
+      margin: 0 0 14px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #c084fc;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(52px, 8vw, 92px);
+      line-height: 0.92;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #f3e8ff;
+      text-shadow: 0 0 24px rgba(192, 132, 252, 0.35);
+    }
+
+    .lede {
+      max-width: 34em;
+      margin: 28px 0 0;
+      font-size: 18px;
+      line-height: 1.55;
+      color: #d8b4fe;
+    }
+
+    .enter {
+      display: inline-block;
+      margin-top: 36px;
+      padding: 12px 18px;
+      width: fit-content;
+      border: 1px solid #a855f7;
+      border-radius: 8px;
+      background: rgba(88, 28, 135, 0.45);
+      color: #f3e8ff;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      box-shadow: 0 0 18px rgba(168, 85, 247, 0.25);
+    }
+
+    .enter:hover {
+      background: rgba(107, 33, 168, 0.75);
+      box-shadow: 0 6px 18px rgba(168, 85, 247, 0.35);
+    }
+
+    @media (max-width: 800px) {
+      .portrait {
+        right: 50%;
+        transform: translateX(50%);
+        height: 98vh;
+        top: auto;
+        bottom: 0;
+        opacity: 0.28;
+      }
+
+      main {
+        justify-content: flex-start;
+        padding-top: 12vh;
+        max-width: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <img class="portrait" src="images/soundwave_portrait.jpg" alt="">
+  <div class="glow" aria-hidden="true"></div>
+  <main>
+    <p class="kicker">Generation 1</p>
+    <h1>Soundwave<br>Archive</h1>
+    <p class="lede">A record of the G1 Soundwave mold and releases.</p>
+    <p>From the Microchange MC-10 CassetteMan prototype, the iconic US run of The Transformers Soundwave, to the Japanese release of Soundblaster, and beyond.</p>
+    <a class="enter" href="./timeline/g1_soundwave_timeline.html">Mold Evolution Timeline</a>
+  </main>
+</body>
+</html>

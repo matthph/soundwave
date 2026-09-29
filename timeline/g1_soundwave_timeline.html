@@ -110,6 +110,16 @@
       color: #fcd34d;
     }
 
+    .callout[data-for="tf1a"],
+    .callout[data-for="tf1b"],
+    .callout[data-for="tf1c"],
+    .callout[data-for="tf2d"],
+    .callout[data-for="tf2e"],
+    .callout[data-for="tf3f"],
+    .callout[data-for="soundblaster"] {
+      transform: translateX(-80px);
+    }
+
     .callout-title {
       font-weight: 700;
       font-size: 14px;
@@ -277,6 +287,10 @@
       border-radius: 999px;
       align-self: center;
       transition: background 0.2s, box-shadow 0.2s, border-color 0.2s;
+    }
+
+    .span.shift-left {
+      transform: translateX(-80px);
     }
 
     .span.microchange {
@@ -466,11 +480,12 @@
       <a class="callout-title" href="variants/TF2E.html">TF 2.E</a>
       <ul class="callout-desc callout-list">
         <li contenteditable="true">Internal Hasbro stamp re-added for international distribution</li>
-        <li contenteditable="true">Basis for Japanese Takara D17, French Ceji, Mexican IGA, and Chinese Soundwave Reissues</li>
+        <li contenteditable="true">Basis for Japanese Takara D17, French Ceji, Mexican IGA, and Chinese Reissues</li>
         <li contenteditable="true">Slotted wrists</li>
         <li contenteditable="true">Used in the 1985 VSY giftset with Grimlock and Frenzy</li>
         <li contenteditable="true">Majority should be rubsigns</li>
         <li contenteditable="true">Most common variant</li>
+        <li contenteditable="true">Japanese D17 maintained spring-loaded rocket launcher</li>
       </ul>
     </div>
 
@@ -486,7 +501,7 @@
     <div class="callout japan" data-for="soundblaster" data-side="bottom" data-place-after="tf3f" style="width: max-content;">
       <a class="callout-title" href="variants/TF3G.html">TF 3.G Soundblaster - Jul 1987</a>
       <ul class="callout-desc callout-list">
-        <li contenteditable="true">Dual-cassette red door</li>
+        <li contenteditable="true">Red dual-cassette door added</li>
         <li contenteditable="true">Black color scheme</li>
       </ul>
     </div>
@@ -578,7 +593,7 @@
             <!-- 1983 through Apr 1984 Empty (6 quarters) -->
             <div class="empty-space" style="flex: 6;"></div>
             <!-- July 1984 – early 1985 -->
-            <div class="span" style="flex: 3;">
+            <div class="span shift-left" style="flex: 3;">
               <span class="mold-label end">Mold 1</span>
               <span class="segment from-start" data-for="tf1a" style="left: 0%; width: 45%;"></span>
               <span class="segment" data-for="tf1b" style="left: 45%; width: 35%;"></span>
@@ -589,11 +604,11 @@
             </div>
             <div class="empty-space" style="flex: 23;"></div>
           </div>
-          <!-- Lower bar: TF 2.D / 2.E, then TF 2.F from the July–Oct 1989 midpoint -->
+          <!-- Lower bar: TF 2.D / 2.E, then TF 2.F from the July–Oct 1989 gap -->
           <div class="lane-row">
             <!-- Starts mid–late TF1 era (Oct 1984) -->
             <div class="empty-space" style="flex: 7;"></div>
-            <div class="span" style="flex: 6;">
+            <div class="span shift-left" style="flex: 6;">
               <span class="mold-label end">Mold 2</span>
               <span class="segment from-start" data-for="tf2d" style="left: 0%; width: 50%;"></span>
               <span class="segment to-end" data-for="tf2e" style="left: 50%; width: 50%;"></span>
@@ -601,6 +616,7 @@
               <i class="anchor" id="tf2e" style="left: 50%;"></i>
             </div>
             <div class="empty-space" style="flex: 14;"></div>
+            <!-- Between July and Oct 1989, through the end of 1990 -->
             <div class="span china" style="flex: 5;">
               <i class="anchor" id="tf2f" style="left: 0%;"></i>
             </div>
@@ -616,7 +632,7 @@
             <!-- 1983 through Apr 1985 -->
             <div class="empty-space" style="flex: 10;"></div>
             <!-- July 1985 – Oct 1986 -->
-            <div class="span japan" style="flex: 4.96;">
+            <div class="span japan shift-left" style="flex: 4.96;">
               <span class="mold-label end">Mold 2</span>
               <i class="anchor" id="tf2e-japan" style="left: 0%;"></i>
             </div>
@@ -628,8 +644,8 @@
             <!-- 1983 through Sept 1986 -->
             <div class="empty-space" style="flex: 14.96;"></div>
             <!-- Oct 1986 – June 1987 -->
-            <div class="span japan" style="flex: 3.04;">
-              <span class="mold-label end">Mold 3 (Japan-only)</span>
+            <div class="span japan shift-left" style="flex: 3.04;">
+              <span class="mold-label end">Mold 3</span>
               <i class="anchor" id="tf3f" style="left: 0%;"></i>
             </div>
             <!-- July 1987 through 1990 -->
@@ -640,7 +656,7 @@
             <!-- 1983 through June 1987 -->
             <div class="empty-space" style="flex: 18;"></div>
             <!-- July 1987 – end of 1987 -->
-            <div class="span japan" style="flex: 2;">
+            <div class="span japan shift-left" style="flex: 2;">
               <span class="mold-label end">Mold 3</span>
               <i class="anchor" id="soundblaster" style="left: 0%;"></i>
             </div>
